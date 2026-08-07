@@ -200,9 +200,7 @@ export default function Book() {
             {/* NAME */}
 
             <div>
-              <label className="block text-white font-medium mb-2">
-                Your Name
-              </label>
+              
 
               <input
                 type="text"
@@ -227,9 +225,7 @@ export default function Book() {
             {/* PHONE */}
 
             <div>
-              <label className="block text-white font-medium mb-2">
-                Phone Number
-              </label>
+              
 
               <input
                 type="tel"
@@ -254,9 +250,7 @@ export default function Book() {
             {/* EMAIL */}
 
             <div>
-              <label className="block text-white font-medium mb-2">
-                Email
-              </label>
+              
 
               <input
                 type="email"
@@ -281,9 +275,7 @@ export default function Book() {
             {/* SERVICE */}
 
             <div>
-              <label className="block text-white font-medium mb-2">
-                Service
-              </label>
+              
 
               <select
                 defaultValue=""
@@ -391,15 +383,14 @@ export default function Book() {
 
           <div className="mt-6">
 
-            <label className="block text-white font-medium mb-2">
-              Tell Us About Your Project
-            </label>
+            
 
             <textarea
               rows={5}
               placeholder="Tell us about your event or photography requirements..."
               className="
                 w-full
+                h-20
                 bg-black/30
                 border border-white/40
                 rounded-xl
