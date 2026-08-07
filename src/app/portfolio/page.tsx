@@ -1,4 +1,5 @@
 import Header from "@/src/components/header";
+import Footer from "@/src/components/footer";
 export default function Portfolio() {
   return (
     <>
@@ -17,7 +18,11 @@ export default function Portfolio() {
           </p>
         </div>
       </main>
+
+      <Footer />
     </>
+
+
 
   );
 

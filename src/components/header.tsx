@@ -11,9 +11,21 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
 
         {/* Logo */}
-        <Link href="/" className="text-3xl font-bold text-red-500">
-          Photography
-        </Link>
+       
+
+        <div className="flex flex-col ">
+          <div className="text-2xl font-bold text--500">
+            INNOVATIVE PHOTOGRAPHY
+          </div>
+          <div className="text-red-500 font-medium ">
+            PHOTOGRAPHY  &   FILMS
+          </div>
+
+
+
+        </div>
+
+
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8 text-lg font-medium text-white">

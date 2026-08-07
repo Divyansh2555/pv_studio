@@ -1,5 +1,5 @@
 import Header from "@/src/components/header";
-
+import Footer from "@/src/components/footer";
 
 export default function Services() {
     return (
@@ -19,6 +19,8 @@ export default function Services() {
           </p>
         </div>
       </main>
+
+      <Footer />
         
         
         </>
