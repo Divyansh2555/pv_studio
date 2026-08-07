@@ -28,14 +28,14 @@ export default function Home() {
   }, [images.length]);
 
   return (
-    <main className="relative h-screen w-full overflow-hidden bg-black">
+    <main className="relative min-h-screen w-full overflow-hidden bg-black">
 
       {/* ================= BACKGROUND SLIDER ================= */}
       <AnimatePresence mode="sync">
         <motion.img
           key={current}
           src={images[current]}
-          alt={`Photography ${current + 1}`}
+          alt={`Photography Slide ${current + 1}`}
           className="absolute inset-0 h-full w-full object-cover"
           initial={{
             opacity: 0,
@@ -71,30 +71,38 @@ export default function Home() {
       />
 
       {/* ================= CONTENT ================= */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-20 text-center text-white sm:px-6">
 
-        {/* Small Heading */}
+        {/* ================= SMALL HEADING ================= */}
         <motion.h2
           initial={{
             opacity: 0,
             y: -40,
-            letterSpacing: "15px",
+            letterSpacing: "12px",
           }}
           animate={{
             opacity: 1,
             y: 0,
-            letterSpacing: "5px",
+            letterSpacing: "4px",
           }}
           transition={{
             duration: 1.2,
             ease: "easeOut",
           }}
-          className="text-sm font-medium uppercase md:text-xl"
+          className="
+            max-w-full
+            text-[10px]
+            font-medium
+            uppercase
+            sm:text-xs
+            sm:tracking-[5px]
+            md:text-xl
+          "
         >
           Stories by INNOVATIVE PHOTOGRAPHY
         </motion.h2>
 
-        {/* Main Heading */}
+        {/* ================= MAIN HEADING ================= */}
         <motion.h1
           initial={{
             opacity: 0,
@@ -111,12 +119,22 @@ export default function Home() {
             delay: 0.25,
             ease: "easeOut",
           }}
-          className="mt-5 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl"
+          className="
+            mt-4
+            max-w-5xl
+            text-3xl
+            font-bold
+            leading-tight
+            sm:mt-5
+            sm:text-4xl
+            md:text-6xl
+            lg:text-7xl
+          "
         >
           Because we are all stories.
         </motion.h1>
 
-        {/* Description */}
+        {/* ================= DESCRIPTION ================= */}
         <motion.p
           initial={{
             opacity: 0,
@@ -131,7 +149,20 @@ export default function Home() {
             delay: 0.55,
             ease: "easeOut",
           }}
-          className="mt-6 max-w-3xl text-base leading-7 text-gray-200 md:text-lg md:leading-8"
+          className="
+            mt-5
+            max-w-xs
+            text-sm
+            leading-6
+            text-gray-200
+            sm:mt-6
+            sm:max-w-xl
+            sm:text-base
+            sm:leading-7
+            md:max-w-3xl
+            md:text-lg
+            md:leading-8
+          "
         >
           Stories by Innovative PhotoGraphy is an international
           award-winning team of photographers who believe in stories;
@@ -157,16 +188,39 @@ export default function Home() {
             ease: [0.22, 1, 0.36, 1],
           }}
           whileHover={{
-            scale: 1.08,
+            scale: 1.06,
           }}
           whileTap={{
-            scale: 0.92,
+            scale: 0.94,
           }}
-          className="group relative mt-10 overflow-hidden rounded-[14px] border-2 border-white px-10 py-4 text-lg font-semibold tracking-wide"
+          className="
+            group
+            relative
+            mt-8
+            overflow-hidden
+            rounded-xl
+            border-2
+            border-white
+            px-7
+            py-3
+            text-base
+            font-semibold
+            tracking-wide
+            sm:mt-10
+            sm:rounded-[14px]
+            sm:px-10
+            sm:py-4
+            sm:text-lg
+          "
         >
-          {/* Shine Animation */}
+          {/* Shine */}
           <motion.span
-            className="absolute inset-0 -translate-x-full bg-white/30"
+            className="
+              absolute
+              inset-0
+              -translate-x-full
+              bg-white/30
+            "
             animate={{
               x: ["-100%", "100%"],
             }}
@@ -178,8 +232,34 @@ export default function Home() {
             }}
           />
 
+          {/* Hover Background */}
+          <span
+            className="
+              absolute
+              inset-0
+              origin-left
+              scale-x-0
+              bg-white
+              transition-transform
+              duration-500
+              group-hover:scale-x-100
+            "
+          />
+
           {/* Button Content */}
-          <span className="relative z-10 flex items-center gap-3 transition-colors duration-300 group-hover:text-black">
+          <span
+            className="
+              relative
+              z-10
+              flex
+              items-center
+              gap-2
+              transition-colors
+              duration-300
+              group-hover:text-black
+              sm:gap-3
+            "
+          >
             Welcome
 
             {/* Arrow */}
@@ -192,14 +272,11 @@ export default function Home() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="text-xl"
+              className="text-lg sm:text-xl"
             >
               →
             </motion.span>
           </span>
-
-          {/* Hover Background */}
-          <span className="absolute inset-0 -z-0 origin-left scale-x-0 bg-white transition-transform duration-500 group-hover:scale-x-100" />
         </motion.button>
 
         {/* ================= SLIDER DOTS ================= */}
@@ -216,7 +293,7 @@ export default function Home() {
             duration: 0.8,
             delay: 1.2,
           }}
-          className="mt-10 flex items-center gap-3"
+          className="mt-8 flex items-center gap-2 sm:mt-10 sm:gap-3"
         >
           {images.map((_, index) => (
             <button
@@ -227,7 +304,7 @@ export default function Home() {
             >
               <motion.div
                 animate={{
-                  width: current === index ? 35 : 8,
+                  width: current === index ? 30 : 7,
                   opacity: current === index ? 1 : 0.45,
                 }}
                 transition={{
@@ -239,7 +316,7 @@ export default function Home() {
           ))}
         </motion.div>
 
-        {/* ================= SCROLL INDICATOR ================= */}
+        {/* ================= EXPLORE ================= */}
         <motion.div
           initial={{
             opacity: 0,
@@ -251,9 +328,28 @@ export default function Home() {
             delay: 1.8,
             duration: 1,
           }}
-          className="absolute bottom-7 flex flex-col items-center gap-2"
+          className="
+            absolute
+            bottom-5
+            left-1/2
+            flex
+            -translate-x-1/2
+            flex-col
+            items-center
+            gap-2
+            sm:bottom-7
+          "
         >
-          <span className="text-[10px] uppercase tracking-[4px] text-white/70">
+          <span
+            className="
+              text-[8px]
+              uppercase
+              tracking-[3px]
+              text-white/70
+              sm:text-[10px]
+              sm:tracking-[4px]
+            "
+          >
             Explore
           </span>
 
@@ -266,10 +362,9 @@ export default function Home() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="h-8 w-[1px] bg-white/70"
+            className="h-6 w-px bg-white/70 sm:h-8"
           />
         </motion.div>
-
       </div>
     </main>
   );
