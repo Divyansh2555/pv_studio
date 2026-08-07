@@ -10,6 +10,8 @@ import p5 from "../../assets/p5.jpg";
 import Footer from "../../components/footer";
 import { useEffect, useState } from "react";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 export default function Homes() {
 
 
@@ -38,24 +40,152 @@ export default function Homes() {
   return (
     <>
       <main>
-        <div className="relative w-full min-h-screen">
-          {/* Background Image */}
-          <Image
-            src={p1}
-            alt="Background"
-            fill
-            className="object-cover -z-10"
-            priority
+
+        <section className="relative min-h-screen overflow-hidden bg-black">
+
+          {/* Transparent Header */}
+          <div className="absolute top-0 left-0 z-50 w-full">
+            <Header />
+          </div>
+
+          {/* Background Slider */}
+          <AnimatePresence mode="sync">
+            <motion.div
+              key={current}
+              className="absolute inset-0"
+              initial={{
+                opacity: 0,
+                scale: 1.1,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              exit={{
+                opacity: 0,
+              }}
+              transition={{
+                duration: 1.2,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src={images[current]}
+                alt="Studio"
+                fill
+                priority
+                className="object-cover"
+              />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Dark Overlay */}
+          <motion.div
+            className="absolute inset-0 z-[1] bg-black/55"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
           />
 
-          <Header />
+          {/* Hero Content */}
+          <div className="relative z-10 flex min-h-screen items-center justify-center px-5 text-center text-white">
 
-          <div className="flex items-center justify-center min-h-screen">
-            <p className="text-white text-5xl font-bold">
-              Welcome to Our Studio
-            </p>
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 1,
+                ease: "easeOut",
+              }}
+            >
+
+              <motion.p
+                initial={{
+                  opacity: 0,
+                  y: -30,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.8,
+                }}
+                className="mb-4 text-sm uppercase tracking-[4px] text-gray-200 sm:text-lg"
+              >
+                Innovative Photography
+              </motion.p>
+
+              <motion.h1
+                initial={{
+                  opacity: 0,
+                  scale: 0.8,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 1,
+                  delay: 0.2,
+                }}
+                className="text-4xl font-bold sm:text-5xl md:text-7xl"
+              >
+                Welcome to Our Studio
+              </motion.h1>
+
+              <motion.p
+                initial={{
+                  opacity: 0,
+                  y: 30,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.5,
+                }}
+                className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-gray-200 sm:text-lg sm:leading-8"
+              >
+                We capture your beautiful moments and turn them
+                into unforgettable stories.
+              </motion.p>
+
+            </motion.div>
           </div>
-        </div>
+
+          {/* Hero Dots */}
+          <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrent(index)}
+                className="p-1"
+                aria-label={`Slide ${index + 1}`}
+              >
+                <motion.div
+                  animate={{
+                    width: current === index ? 30 : 8,
+                    opacity: current === index ? 1 : 0.5,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                  }}
+                  className="h-2 rounded-full bg-white"
+                />
+              </button>
+            ))}
+          </div>
+
+        </section>
 
 
 
@@ -67,7 +197,6 @@ export default function Homes() {
 
 
 
-        
 
 
         <section className="p-5">
@@ -97,9 +226,13 @@ export default function Homes() {
           </div>
         </section>
 
-
+        
 
         
+
+
+
+
 
 
 
@@ -165,8 +298,8 @@ export default function Homes() {
                   key={index}
                   onClick={() => setCurrent(index)}
                   className={`w-3 h-3 rounded-full ${current === index
-                      ? "bg-white"
-                      : "bg-white/50"
+                    ? "bg-white"
+                    : "bg-white/50"
                     }`}
                 />
               ))}
@@ -175,49 +308,26 @@ export default function Homes() {
           </div>
         </section>
 
+        <section>
 
-
-
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-
-            <h2 className="text-4xl font-bold text-center mb-12">
-              Our Services
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-              <div className="bg-gray-100 p-8 rounded-xl text-center shadow-lg hover:shadow-2xl transition">
-                <h3 className="text-2xl font-semibold mb-3">📸 Photography</h3>
-                <p>Professional photography for every occasion.</p>
-              </div>
-
-              <div className="bg-gray-100 p-8 rounded-xl text-center shadow-lg hover:shadow-2xl transition">
-                <h3 className="text-2xl font-semibold mb-3">🎥 Videography</h3>
-                <p>High-quality cinematic video production.</p>
-              </div>
-
-              <div className="bg-gray-100 p-8 rounded-xl text-center shadow-lg hover:shadow-2xl transition">
-                <h3 className="text-2xl font-semibold mb-3">🚁 Drone Shoot</h3>
-                <p>Beautiful aerial photography and videos.</p>
-              </div>
-
-              <div className="bg-gray-100 p-8 rounded-xl text-center shadow-lg hover:shadow-2xl transition">
-                <h3 className="text-2xl font-semibold mb-3">💍 Wedding</h3>
-                <p>Capture your special moments forever.</p>
-              </div>
-
-            </div>
-
-          </div>
         </section>
 
-
-
         
 
 
-        
+
+
+     
+
+
+      
+
+
+
+
+
+
+
 
 
 
@@ -231,7 +341,7 @@ export default function Homes() {
 
 
       <Footer />
-  
+
 
 
 
