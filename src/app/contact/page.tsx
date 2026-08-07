@@ -1,14 +1,19 @@
 import Header from "@/src/components/header";
 import Footer from "@/src/components/footer";
+
 export default function Contact() {
   return (
     <>
-      <Header />
+      {/* Fixed Header */}
+      <header className="fixed top-0 left-0 w-full z-50 bg-red-300">
+        <Header />
+      </header>
 
-      <main className="min-h-screen bg-red-200 flex items-center justify-center">
+      {/* Contact Content */}
+      <main className="min-h-screen bg-red-200 flex items-center justify-center pt-20">
         <div className="text-center">
           <h1 className="text-5xl font-bold text-gray-900">
-            Contacts Us
+            Contact Us
           </h1>
 
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
@@ -20,10 +25,6 @@ export default function Contact() {
       </main>
 
       <Footer />
-
-
     </>
-
   );
-
 }

@@ -39,7 +39,7 @@ export default function Home() {
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
         <h2 className="text-xl uppercase tracking-[6px]">
-          Stories by Joseph Radhik
+          Stories by INNOVATIVE PHOTOGRAPHY
         </h2>
 
         <h1 className="mt-4 text-5xl font-bold md:text-6xl">
@@ -47,14 +47,14 @@ export default function Home() {
         </h1>
 
         <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-200">
-          Stories by Joseph Radhik is an international award-winning team of
+          Stories by Innovative PhotoGraphy is an international award-winning team of
           photographers who believe in stories; stories of love, laughter and
           happily ever after.
         </p>
 
         <button
           onClick={() => router.push("/homes")}
-          className="mt-10 rounded-full border-2 border-white px-10 py-4 text-lg font-semibold transition hover:bg-white hover:text-black"
+          className="mt-10 rounded-[14px] border-2 border-white px-10 py-4 text-lg font-semibold transition hover:bg-white hover:text-black"
         >
           Welcome
         </button>
