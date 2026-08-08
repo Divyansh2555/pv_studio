@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import Services from "../../app/services";
 import Header from "../../components/header";
 import Image from "next/image";
 import p1 from "../../assets/p1.jpg";
@@ -10,10 +12,24 @@ import p5 from "../../assets/p5.jpg";
 import Footer from "../../components/footer";
 import { useEffect, useState } from "react";
 
+
+import {
+  Camera,
+  Video,
+  Plane,
+  Pencil,
+  CalendarDays,
+  MapPin,
+  Drone,
+  Edit,
+} from "lucide-react";
+
+
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Homes() {
 
+ const router = useRouter();
 
   const images = [
     p1,
@@ -40,6 +56,8 @@ export default function Homes() {
   return (
     <>
       <main>
+
+        {/* home*/}
 
         <section className="relative min-h-screen overflow-hidden bg-black">
 
@@ -192,7 +210,255 @@ export default function Homes() {
 
 
 
+     
 
+<section className="w-full  bg-[#414648] p-1">
+ 
+
+  <div  onClick={() => router.push("/services")} className="w-full overflow-hidden">
+  <div
+    className="flex w-max gap-4"
+    style={{
+      animation: "serviceScroll 25s linear infinite",
+    }}
+  >
+    {/* ================= FIRST SET ================= */}
+
+    {/* Photography */}
+    <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#1c1d1e] border border-[#2a2925] p-3">
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        <Camera className="w-9 h-9 text-[#d4a72c]" />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-[#e0b83f] text-sm font-semibold">
+          Photography
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          Capturing real moments
+        </p>
+      </div>
+    </div>
+
+    {/* Videography */}
+    <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        <Video className="w-9 h-9 text-[#d4a72c]" />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-[#e0b83f] text-sm font-semibold">
+          Videography
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          Cinematic films that
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          tell your story
+        </p>
+      </div>
+    </div>
+
+    {/* Drone */}
+    <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        <Drone className="w-9 h-9 text-[#d4a72c]" />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-[#e0b83f] text-sm font-semibold">
+          Drone Shots
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          View from above
+        </p>
+      </div>
+    </div>
+
+    {/* Editing */}
+    <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        <Edit className="w-9 h-9 text-[#d4a72c]" />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-[#e0b83f] text-sm font-semibold">
+          Editing
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          Professional editing
+        </p>
+      </div>
+    </div>
+
+    {/* Events */}
+    <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        <CalendarDays className="w-9 h-9 text-[#d4a72c]" />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-[#e0b83f] text-sm font-semibold">
+          Events
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          Special moments
+        </p>
+      </div>
+    </div>
+
+    {/* Travel */}
+    <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        <Plane className="w-9 h-9 text-[#d4a72c]" />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-[#e0b83f] text-sm font-semibold">
+          Travel
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          Explore & capture
+        </p>
+      </div>
+    </div>
+
+
+    {/* ================= DUPLICATE SET ================= */}
+
+    {/* Photography */}
+    <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        <Camera className="w-9 h-9 text-[#d4a72c]" />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-[#e0b83f] text-sm font-semibold">
+          Photography
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          Capturing real moments
+        </p>
+      </div>
+    </div>
+
+    {/* Videography */}
+    <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        <Video className="w-9 h-9 text-[#d4a72c]" />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-[#e0b83f] text-sm font-semibold">
+          Videography
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          Cinematic films that
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          tell your story
+        </p>
+      </div>
+    </div>
+
+    {/* Drone */}
+    <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        <Drone className="w-9 h-9 text-[#d4a72c]" />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-[#e0b83f] text-sm font-semibold">
+          Drone Shots
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          View from above
+        </p>
+      </div>
+    </div>
+
+    {/* Editing */}
+    <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        <Edit className="w-9 h-9 text-[#d4a72c]" />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-[#e0b83f] text-sm font-semibold">
+          Editing
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          Professional editing
+        </p>
+      </div>
+    </div>
+
+    {/* Events */}
+    <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        <CalendarDays className="w-9 h-9 text-[#d4a72c]" />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-[#e0b83f] text-sm font-semibold">
+          Events
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          Special moments
+        </p>
+      </div>
+    </div>
+
+    {/* Travel */}
+    <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        <Plane className="w-9 h-9 text-[#d4a72c]" />
+      </div>
+
+      <div className="ml-3">
+        <p className="text-[#e0b83f] text-sm font-semibold">
+          Travel
+        </p>
+        <p className="text-[#a3a3a3] text-xs">
+          Explore & capture
+        </p>
+      </div>
+    </div>
+
+    {/* ================= INLINE ANIMATION ================= */}
+
+    <style jsx>{`
+      @keyframes serviceScroll {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      div[style*="serviceScroll"]:hover {
+        animation-play-state: paused !important;
+      }
+    `}</style>
+
+  </div>
+</div>
+
+
+  
+</section>
+
+
+
+
+
+
+
+
+
+      
 
 
 
@@ -225,6 +491,20 @@ export default function Homes() {
 
           </div>
         </section>
+
+
+        
+
+
+
+        
+
+
+        
+
+
+
+
 
         
 
