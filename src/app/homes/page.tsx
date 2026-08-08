@@ -205,7 +205,7 @@ export default function Homes() {
         </section>
 
 
-        <section onClick={() => router.push("/about")} className="w-full  bg-[#454748] p-1">
+        <section onClick={() => router.push("/services")} className="w-full  bg-[#454748] p-1">
 
 
           <div className="w-full overflow-hidden">
@@ -594,8 +594,8 @@ export default function Homes() {
 
 
 
-        <section className="w-full p-2">
-          <div className="w-full max-w-7xl mx-auto px-4">
+        <section className="w-full pt-2 pb-2">
+          <div className="w-full max-w-7xl mx-auto sm:px-4 px-1">
             <div className="
         w-full h-[190px]
         overflow-hidden
