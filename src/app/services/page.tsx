@@ -573,8 +573,9 @@ export default function Services() {
 
                       /* CLICK CARD → BOOK PAGE */
                       onClick={() => router.push("/book")}
+                     const cardvariants={cardVariants}
 
-                      variants={cardVariants}
+
 
                       whileHover={{
                         y: -8,

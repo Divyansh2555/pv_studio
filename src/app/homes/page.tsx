@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import Services from "../../app/services";
 import Header from "../../components/header";
 import Image from "next/image";
 import p1 from "../../assets/p1.jpg";
@@ -29,7 +28,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Homes() {
 
-  const router = useRouter();
 
   const images = [
     p1,
@@ -209,7 +207,7 @@ export default function Homes() {
         <section className="w-full  bg-[#414648] p-1">
 
 
-          <div onClick={() => router.push("/services")} className="w-full overflow-hidden">
+          <div  className="w-full overflow-hidden">
             <div
               className="flex w-max gap-4"
               style={{
