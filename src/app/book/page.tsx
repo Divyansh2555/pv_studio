@@ -147,7 +147,7 @@ export default function Book() {
             }}
             className="text-[#C8A96A] uppercase text-sm font-semibold"
           >
-            Photography • Videography • Films
+            Photography • Videography 
           </motion.p>
 
           <h1 className="text-4xl md:text-6xl font-bold mt-5 drop-shadow-2xl">

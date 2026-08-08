@@ -43,13 +43,17 @@ import p8 from "../../assets/services/pii.png";
 // =========================================
 
 import p9 from "../../assets/p9.jpg";
-import p10 from "../../assets/p10.jpg";
+import p10 from "../../assets/services/fi.png";
+
 import p11 from "../../assets/p11.jpg";
-import p12 from "../../assets/p12.jpg";
-import p13 from "../../assets/p13.jpg";
-import p14 from "../../assets/p14.jpg";
-import p15 from "../../assets/p15.jpg";
-import p16 from "../../assets/p16.jpg";
+import p12 from "../../assets/services/fim.png";
+
+import p13 from "../../assets/services/nim.png";
+import p14 from "../../assets/services/nighti.png";
+
+import p15 from "../../assets/services/spi.png";
+import p16 from "../../assets/services/shadi.png";
+
 
 // =========================================
 // SERVICES DATA

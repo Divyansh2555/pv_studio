@@ -26,7 +26,10 @@ const links = [
   { name: "Home", href: "/homes" },
   { name: "About", href: "/about" },
   { name: "Portfolio", href: "/portfolio" },
+  { name: "Services", href: "/services" },
+
   { name: "Contact", href: "/contact" },
+
 ];
 
 export default function Footer() {

@@ -10,6 +10,7 @@ import p4 from "../../assets/p4.jpg";
 import p5 from "../../assets/p5.jpg";
 import Footer from "../../components/footer";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 
 import {
@@ -28,7 +29,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Homes() {
 
-
+  const router = useRouter();
   const images = [
     p1,
     p2,
@@ -204,10 +205,10 @@ export default function Homes() {
         </section>
 
 
-        <section className="w-full  bg-[#414648] p-1">
+        <section onClick={() => router.push("/about")} className="w-full  bg-[#454748] p-1">
 
 
-          <div  className="w-full overflow-hidden">
+          <div className="w-full overflow-hidden">
             <div
               className="flex w-max gap-4"
               style={{
@@ -217,7 +218,7 @@ export default function Homes() {
               {/* ================= FIRST SET ================= */}
 
               {/* Photography */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#1c1d1e] border border-[#2a2925] p-3">
+              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border  border-[#a9a288] p-3">
                 <div className="w-14 h-14 shrink-0 flex items-center justify-center">
                   <Camera className="w-9 h-9 text-[#d4a72c]" />
                 </div>
@@ -233,7 +234,7 @@ export default function Homes() {
               </div>
 
               {/* Videography */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg  border  border-[#a9a288] p-3   cursor-pointer hover:text-blue-500 transition-colors">
                 <div className="w-14 h-14 shrink-0 flex items-center justify-center">
                   <Video className="w-9 h-9 text-[#d4a72c]" />
                 </div>
@@ -252,7 +253,7 @@ export default function Homes() {
               </div>
 
               {/* Drone */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border border-[#a9a288] p-3">
                 <div className="w-14 h-14 shrink-0 flex items-center justify-center">
                   <Drone className="w-9 h-9 text-[#d4a72c]" />
                 </div>
@@ -268,7 +269,7 @@ export default function Homes() {
               </div>
 
               {/* Editing */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border  border-[#a9a288] p-3">
                 <div className="w-14 h-14 shrink-0 flex items-center justify-center">
                   <Edit className="w-9 h-9 text-[#d4a72c]" />
                 </div>
@@ -284,7 +285,7 @@ export default function Homes() {
               </div>
 
               {/* Events */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg  border  border-[#a9a288] p-3">
                 <div className="w-14 h-14 shrink-0 flex items-center justify-center">
                   <CalendarDays className="w-9 h-9 text-[#d4a72c]" />
                 </div>
@@ -300,7 +301,7 @@ export default function Homes() {
               </div>
 
               {/* Travel */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border  border-[#a9a288] p-3">
                 <div className="w-14 h-14 shrink-0 flex items-center justify-center">
                   <Plane className="w-9 h-9 text-[#d4a72c]" />
                 </div>
@@ -319,7 +320,7 @@ export default function Homes() {
               {/* ================= DUPLICATE SET ================= */}
 
               {/* Photography */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg  border border-[#a9a288] p-3">
                 <div className="w-14 h-14 shrink-0 flex items-center justify-center">
                   <Camera className="w-9 h-9 text-[#d4a72c]" />
                 </div>
@@ -335,7 +336,7 @@ export default function Homes() {
               </div>
 
               {/* Videography */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border  border-[#a9a288] p-3">
                 <div className="w-14 h-14 shrink-0 flex items-center justify-center">
                   <Video className="w-9 h-9 text-[#d4a72c]" />
                 </div>
@@ -354,7 +355,7 @@ export default function Homes() {
               </div>
 
               {/* Drone */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border  border-[#a9a288] p-3">
                 <div className="w-14 h-14 shrink-0 flex items-center justify-center">
                   <Drone className="w-9 h-9 text-[#d4a72c]" />
                 </div>
@@ -370,7 +371,7 @@ export default function Homes() {
               </div>
 
               {/* Editing */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg  border  border-[#a9a288] p-3">
                 <div className="w-14 h-14 shrink-0 flex items-center justify-center">
                   <Edit className="w-9 h-9 text-[#d4a72c]" />
                 </div>
@@ -386,7 +387,7 @@ export default function Homes() {
               </div>
 
               {/* Events */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border  border-[#a9a288] p-3">
                 <div className="w-14 h-14 shrink-0 flex items-center justify-center">
                   <CalendarDays className="w-9 h-9 text-[#d4a72c]" />
                 </div>
@@ -402,7 +403,7 @@ export default function Homes() {
               </div>
 
               {/* Travel */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg bg-[#11110f] border border-[#2a2925] p-3">
+              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg  border border-[#a9a288] p-3">
                 <div className="w-14 h-14 shrink-0 flex items-center justify-center">
                   <Plane className="w-9 h-9 text-[#d4a72c]" />
                 </div>
@@ -521,7 +522,7 @@ export default function Homes() {
 
         {/* IMAGE SLIDER — ONLY THIS PART CHANGED */}
 
-        <section className="p-5 bg-amber-100">
+        <section className="p-5 bg-amber-100" >
           <div className="relative h-[300px] overflow-hidden rounded-xl">
 
             {/* Images */}
@@ -588,9 +589,37 @@ export default function Homes() {
           </div>
         </section>
 
-        <section>
+        
 
+
+
+
+        <section className="w-full p-2">
+          <div className="w-full max-w-7xl mx-auto px-4">
+            <div className="
+        w-full h-[190px]
+        overflow-hidden
+        rounded-2xl
+        border-2 border-blue-500
+        shadow-[0_0_15px_rgba(59,130,246,0.5)] ">
+              <iframe
+                src="https://www.google.com/maps?q=Prayagraj,Uttar+Pradesh,India&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
         </section>
+
+
+
+
+
+
 
 
 
