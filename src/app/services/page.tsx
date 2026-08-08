@@ -173,7 +173,7 @@ const cardVariants = {
 
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as any,
     },
   },
 };
@@ -573,7 +573,7 @@ export default function Services() {
 
                       /* CLICK CARD → BOOK PAGE */
                       onClick={() => router.push("/book")}
-                      cardvariants={cardVariants}
+                      variants={cardVariants}
 
 
 
