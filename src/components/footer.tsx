@@ -504,7 +504,7 @@ export default function Footer() {
             >
               INNOVATIVE{" "}
               <span className="text-[#C8A96A]">
-                STUDIO
+                PHOTOGRAPHY
               </span>
             </motion.h3>
 

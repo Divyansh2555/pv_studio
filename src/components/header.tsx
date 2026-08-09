@@ -23,11 +23,10 @@ export default function Header() {
 
   return (
     <header
-      className={`${
-        isHome
+      className={`${isHome
           ? "absolute top-0 left-0 bg-transparent"
           : "relative bg-white shadow-md"
-      } z-50 w-full`}
+        } z-50 w-full`}
     >
       {/* ================= NAVBAR ================= */}
       <nav className="mx-auto flex min-h-[70px] max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
@@ -45,17 +44,23 @@ export default function Header() {
               duration: 0.7,
               ease: "easeOut",
             }}
-            className="flex flex-col"
+            className="flex flex-col "
           >
+
+
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
-              className={`text-lg font-bold tracking-tight sm:text-xl md:text-2xl ${
-                isHome ? "text-white" : "text-gray-900"
-              }`}
+              className="text-lg font-bold tracking-tight sm:text-xl md:text-2xl"
             >
-              INNOVATIVE PHOTOGRAPHY
+              <span className={isHome ? "text-white" : "text-slate-900"}>
+                INNOVATIVE
+              </span>{" "}
+              <span className={isHome ? "text-[#C8A96A]" : "text-[#C8A96A]"}>
+                PHOTOGRAPHY
+              </span>
             </motion.div>
+
 
             <motion.div
               initial={{ opacity: 0, y: 8 }}
@@ -84,9 +89,8 @@ export default function Header() {
               },
             },
           }}
-          className={`hidden items-center gap-7 text-base font-medium lg:flex xl:gap-9 xl:text-lg ${
-            isHome ? "text-white" : "text-gray-900"
-          }`}
+          className={`hidden items-center gap-7 text-base font-medium lg:flex xl:gap-9 xl:text-lg ${isHome ? "text-white" : "text-gray-900"
+            }`}
         >
           {menuItems.map((item) => {
             const active = pathname === item.href;
@@ -113,11 +117,10 @@ export default function Header() {
 
                   {/* Animated Underline */}
                   <span
-                    className={`absolute bottom-0 left-0 h-[2px] bg-red-500 transition-all duration-300 ${
-                      active
+                    className={`absolute bottom-0 left-0 h-[2px] bg-red-500 transition-all duration-300 ${active
                         ? "w-full"
                         : "w-0 group-hover:w-full"
-                    }`}
+                      }`}
                   />
                 </Link>
               </motion.li>
@@ -137,11 +140,10 @@ export default function Header() {
             whileTap={{ scale: 0.85 }}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            className={`relative z-[60] flex h-11 w-11 items-center justify-center rounded-full transition-all duration-300 ${
-              isHome
+            className={`relative z-[60] flex h-11 w-11 items-center justify-center rounded-full transition-all duration-300 ${isHome
                 ? "text-white hover:bg-white/10"
                 : "text-gray-900 hover:bg-gray-100"
-            }`}
+              }`}
           >
             <AnimatePresence mode="wait">
               {menuOpen ? (
@@ -251,11 +253,10 @@ export default function Header() {
                       <Link
                         href={item.href}
                         onClick={() => setMenuOpen(false)}
-                        className={`flex items-center px-7 py-3.5 text-base font-medium transition-all duration-300 ${
-                          pathname === item.href
+                        className={`flex items-center px-7 py-3.5 text-base font-medium transition-all duration-300 ${pathname === item.href
                             ? "bg-red-500/10 text-red-500"
                             : "text-white hover:bg-white/10 hover:pl-9 hover:text-red-500"
-                        }`}
+                          }`}
                       >
                         {item.name}
                       </Link>
