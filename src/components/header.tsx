@@ -51,14 +51,12 @@ export default function Header() {
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
-              className="text-lg font-bold tracking-tight sm:text-xl md:text-2xl"
+              className="text-lg font-bold tracking-tight text-[25px] sm:text-[70px] md:text-2xl font-serif"
             >
               <span className={isHome ? "text-white" : "text-slate-900"}>
                 INNOVATIVE
               </span>{" "}
-              <span className={isHome ? "text-[#C8A96A]" : "text-[#C8A96A]"}>
-                PHOTOGRAPHY
-              </span>
+             
             </motion.div>
 
 
@@ -69,9 +67,9 @@ export default function Header() {
                 duration: 0.5,
                 delay: 0.25,
               }}
-              className="text-xs font-medium tracking-[2px] text-red-500 sm:text-sm"
+              className="text-xs  tracking-[2px] text-[#C8A96A] font-bold sm:text-sm"
             >
-              PHOTOGRAPHY & FILMS
+              PHOTOGRAPHY
             </motion.div>
           </motion.div>
         </Link>
@@ -220,7 +218,7 @@ export default function Header() {
                   duration: 0.25,
                   ease: "easeOut",
                 }}
-                className="absolute top-[60px] right-0 z-50 w-[230px] overflow-hidden rounded-2xl border border-gray-700 bg-black/95 shadow-2xl"
+                className="absolute top-[0px] right-0 z-50 w-[230px] overflow-hidden rounded-2xl border border-gray-700 bg-black/95 shadow-2xl"
               >
                 <motion.ul
                   initial="hidden"

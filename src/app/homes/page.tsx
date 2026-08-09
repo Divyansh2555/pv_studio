@@ -105,7 +105,7 @@ export default function Homes() {
           />
 
           {/* Hero Content */}
-          <div className="relative z-10 flex min-h-screen items-center justify-center px-5 text-center text-white">
+          <div className="relative z-10 flex min-h-screen items-center justify-start sm:px-20 px-8   text-white">
 
             <motion.div
               initial={{
@@ -134,9 +134,9 @@ export default function Homes() {
                 transition={{
                   duration: 0.8,
                 }}
-                className="mb-4 text-sm uppercase tracking-[4px] text-gray-200 sm:text-lg"
+                className="text-start mb-1 font-bold  text-sm uppercase tracking-[4px] text-[#e8f186d5] sm:text-lg"
               >
-                Innovative Photography
+                WE CAPTURE
               </motion.p>
 
               <motion.h1
@@ -152,10 +152,29 @@ export default function Homes() {
                   duration: 1,
                   delay: 0.2,
                 }}
-                className="text-4xl font-bold sm:text-5xl md:text-7xl"
+                className="text-start font-serif text-4xl  sm:text-5xl md:text-6xl"
               >
-                Welcome to Our Studio
+                Your Story,
               </motion.h1>
+
+              <motion.h1
+                initial={{
+                  opacity: 0,
+                  scale: 0.8,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 1,
+                  delay: 0.2,
+                }}
+                className="text-4xl font-serif sm:text-5xl md:text-6xl"
+              >
+                Not Just Your Photos.
+              </motion.h1>
+
 
               <motion.p
                 initial={{
@@ -170,11 +189,75 @@ export default function Homes() {
                   duration: 0.8,
                   delay: 0.5,
                 }}
-                className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-gray-200 sm:text-lg sm:leading-8"
+                className="text-start mx-auto mt-5 max-w-2xl text-sm leading-6 text-gray-200 sm:text-lg sm:leading-8"
               >
-                We capture your beautiful moments and turn them
-                into unforgettable stories.
+                Timeless photographs, cinematic Films
               </motion.p>
+
+              <motion.p
+                initial={{
+                  opacity: 0,
+                  y: 30,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.5,
+                }}
+                className="text-start mx-auto  max-w-2xl text-sm leading-6 text-gray-200 sm:text-lg sm:leading-8"
+              >
+                and real emotions.
+              </motion.p>
+
+
+
+              <div className="flex flex-row items-center gap-2 pt-4">
+                <motion.button
+                  onClick={() => router.push("/portfolio")}
+                  className=" flex cursor-pointer items-center justify-center
+              bg-[#D4AF37]
+            active:bg-white
+          active:text-black
+           border border-[#d1ef0d]
+              px-3 py-2
+         text-[10px]
+           sm:px-5 sm:py-3 sm:text-sm
+         whitespace-nowrap"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  VIEW PORTFOLIO
+                </motion.button>
+
+                <motion.button
+                  onClick={() => router.push("/book")}
+                  className="
+      flex cursor-pointer items-center justify-center
+      border border-[#f0f0f0]
+      px-3 py-2
+      text-[10px]
+      sm:px-5 sm:py-3 sm:text-sm
+      whitespace-nowrap
+    "
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  BOOK A CONSULTATION
+                </motion.button>
+              </div>
+
+
+
+
+
+
+
+
+
+
 
             </motion.div>
           </div>
@@ -203,6 +286,60 @@ export default function Homes() {
           </div>
 
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <section className="flex h-50 w-full text-center p-2">
+
+          <div className="flex flex-row gap-3 overflow-x-auto">
+
+
+            <div className="flex flex-col h-45 justify-start items-start pt-5 pl-5 ">
+              <div className="text-[#f2de28ee]">WHAT WE DO</div>
+              <div className="flex font-bold"> OUR Services</div>
+
+
+
+              <div> EXPLORE ALL SERVICES </div>
+
+            </div>
+
+            <div className="bg-amber-600 h-45 w-40 ">
+              
+
+            </div>
+
+             <div className="bg-amber-600 h-45 w-40 ">
+              
+
+            </div>
+
+            <div className="bg-amber-600 h-45 w-40 ">
+              
+
+            </div>
+
+
+          </div>
+
+
+
+        </section>
+
+
+
+
+
+
 
 
         <section onClick={() => router.push("/services")} className="w-full  bg-[#454748] p-1">
@@ -444,12 +581,7 @@ export default function Homes() {
         </section>
 
 
-        <section className="flex h-20 w-full bg-amber-100 text-center p-2">
-          <div className="flex text-center ">
-            hhhdds
-          </div>
 
-        </section>
 
 
 
@@ -589,7 +721,7 @@ export default function Homes() {
           </div>
         </section>
 
-        
+
 
 
 
