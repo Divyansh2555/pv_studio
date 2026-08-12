@@ -1,16 +1,28 @@
+
 "use client";
 
 import { useRouter } from "next/navigation";
 import Header from "../../components/header";
 import Image from "next/image";
+
 import p1 from "../../assets/p1.jpg";
 import p2 from "../../assets/p2.jpg";
 import p3 from "../../assets/p3.jpg";
 import p4 from "../../assets/p4.jpg";
 import p5 from "../../assets/p5.jpg";
+
 import Footer from "../../components/footer";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+
+import hbg from "../../assets/home/hbg.png";
+import h1 from "../../assets/home/h1.jpg";
+import h2 from "../../assets/home/h2.jpg";
+import h3 from "../../assets/home/h3.jpg";
+import h5 from "../../assets/home/h5.jpg";
+import h6 from "../../assets/home/h6.jpg";
+import ba from "../../assets/home/ba.jpg";
+import ii from "../../assets/home/ii.png";
 
 
 import {
@@ -24,33 +36,47 @@ import {
   Edit,
 } from "lucide-react";
 
-
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Homes() {
-
   const router = useRouter();
+
+  // Website ke dusre sections ke liye
   const images = [
+    hbg,
+    h1,
+    h2,
+    h3,
+    h5,
+    h6,
     p1,
     p2,
     p3,
     p4,
     p5,
+    ba,
+  ];
+
+  // Sirf Hero Slider ke liye
+  const heroImages = [
+    hbg,
+    h1,
+    h2,
+    h3,
+    h5,
+    h6,
   ];
 
   const [current, setCurrent] = useState(0);
 
-
-
-
+  // Hero Slider
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
+      setCurrent((prev) => (prev + 1) % heroImages.length);
     }, 2000);
 
     return () => clearInterval(timer);
-  }, [images.length]);
-
+  }, [heroImages.length]);
 
   return (
     <>
@@ -58,10 +84,12 @@ export default function Homes() {
 
         {/* home*/}
 
+
+
         <section className="relative min-h-screen overflow-hidden bg-black">
 
           {/* Transparent Header */}
-          <div className="absolute top-0 left-0 z-50 w-full">
+          <div className="absolute left-0 top-0 z-50 w-full">
             <Header />
           </div>
 
@@ -87,10 +115,11 @@ export default function Homes() {
               }}
             >
               <Image
-                src={images[current]}
-                alt="Studio"
+                src={heroImages[current]}
+                alt={`Studio image ${current + 1}`}
                 fill
-                priority
+                priority={current === 0}
+                sizes="100vw"
                 className="object-cover"
               />
             </motion.div>
@@ -105,7 +134,7 @@ export default function Homes() {
           />
 
           {/* Hero Content */}
-          <div className="relative z-10 flex min-h-screen items-center justify-start sm:px-20 px-8   text-white">
+          <div className="relative z-10 flex min-h-screen items-center justify-start px-8 text-white sm:px-20">
 
             <motion.div
               initial={{
@@ -122,6 +151,7 @@ export default function Homes() {
               }}
             >
 
+              {/* WE CAPTURE */}
               <motion.p
                 initial={{
                   opacity: 0,
@@ -134,11 +164,12 @@ export default function Homes() {
                 transition={{
                   duration: 0.8,
                 }}
-                className="text-start mb-1 font-bold  text-sm uppercase tracking-[4px] text-[#e8f186d5] sm:text-lg"
+                className="mb-1 text-start text-sm font-bold uppercase tracking-[4px] text-[#e8f186d5] sm:text-lg"
               >
                 WE CAPTURE
               </motion.p>
 
+              {/* Heading */}
               <motion.h1
                 initial={{
                   opacity: 0,
@@ -152,7 +183,7 @@ export default function Homes() {
                   duration: 1,
                   delay: 0.2,
                 }}
-                className="text-start font-serif text-4xl  sm:text-5xl md:text-6xl"
+                className="text-start font-serif text-4xl sm:text-5xl md:text-6xl"
               >
                 Your Story,
               </motion.h1>
@@ -170,12 +201,12 @@ export default function Homes() {
                   duration: 1,
                   delay: 0.2,
                 }}
-                className="text-4xl font-serif sm:text-5xl md:text-6xl"
+                className="text-start font-serif text-4xl sm:text-5xl md:text-6xl"
               >
                 Not Just Your Photos.
               </motion.h1>
 
-
+              {/* Description */}
               <motion.p
                 initial={{
                   opacity: 0,
@@ -189,7 +220,7 @@ export default function Homes() {
                   duration: 0.8,
                   delay: 0.5,
                 }}
-                className="text-start mx-auto mt-5 max-w-2xl text-sm leading-6 text-gray-200 sm:text-lg sm:leading-8"
+                className="mx-auto mt-5 max-w-2xl text-start text-sm leading-6 text-gray-200 sm:text-lg sm:leading-8"
               >
                 Timeless photographs, cinematic Films
               </motion.p>
@@ -207,64 +238,61 @@ export default function Homes() {
                   duration: 0.8,
                   delay: 0.5,
                 }}
-                className="text-start mx-auto  max-w-2xl text-sm leading-6 text-gray-200 sm:text-lg sm:leading-8"
+                className="mx-auto max-w-2xl text-start text-sm leading-6 text-gray-200 sm:text-lg sm:leading-8"
               >
                 and real emotions.
               </motion.p>
 
-
-
+              {/* Buttons */}
               <div className="flex flex-row items-center gap-2 pt-4">
+
+                {/* Portfolio Button */}
                 <motion.button
                   onClick={() => router.push("/portfolio")}
-                  className=" flex cursor-pointer items-center justify-center
-              bg-[#D4AF37]
-            active:bg-white
-          active:text-black
-           border border-[#d1ef0d]
-              px-3 py-2
-         text-[10px]
-           sm:px-5 sm:py-3 sm:text-sm
-         whitespace-nowrap"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  className="
+            flex cursor-pointer items-center justify-center
+            whitespace-nowrap
+            border border-[#d1ef0d]
+            bg-[#D4AF37]
+            px-3 py-2
+            text-[10px]
+            active:bg-white
+            active:text-black
+            sm:px-5 sm:py-3 sm:text-sm
+          "
                 >
                   VIEW PORTFOLIO
                 </motion.button>
 
+                {/* Book Button */}
                 <motion.button
                   onClick={() => router.push("/book")}
-                  className="
-      flex cursor-pointer items-center justify-center
-      border border-[#f0f0f0]
-      px-3 py-2
-      text-[10px]
-      sm:px-5 sm:py-3 sm:text-sm
-      whitespace-nowrap
-    "
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  className="
+            flex cursor-pointer items-center justify-center
+            whitespace-nowrap
+            border border-white
+            px-3 py-2
+            text-[10px]
+            sm:px-5 sm:py-3 sm:text-sm
+          "
                 >
                   BOOK A CONSULTATION
                 </motion.button>
+
               </div>
-
-
-
-
-
-
-
-
-
-
 
             </motion.div>
           </div>
 
           {/* Hero Dots */}
           <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-2">
-            {images.map((_, index) => (
+
+            {/* IMPORTANT: heroImages.map */}
+            {heroImages.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrent(index)}
@@ -283,6 +311,7 @@ export default function Homes() {
                 />
               </button>
             ))}
+
           </div>
 
         </section>
@@ -298,163 +327,164 @@ export default function Homes() {
 
 
 
-        <section className="flex h-54 w-full text-center p-2">
-
-          <div className="flex flex-row gap-3 overflow-x-auto">
-
-
-            <div className="flex flex-col h-50 justify-start items-start pt-5 pl-5 ">
-              <div className="text-[#f2de28ee]">WHAT WE DO</div>
-              <div className="flex font-bold"> OUR Services</div>
 
 
 
-              <div> EXPLORE ALL SERVICES </div>
 
+        <section className="w-full px-2 py-5">
+          <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-row sm:gap-3 sm:overflow-x-auto sm:pb-2">
+
+            {/* WHAT WE DO */}
+            <div className="col-span-2 flex flex-col items-start justify-start px-4 pt-3 sm:w-40 sm:shrink-0 sm:px-0 sm:pt-5">
+              <div className="text-[11px] font-semibold tracking-wide text-[#C8A96A]">
+                WHAT WE DO
+              </div>
+
+              <div className="text-lg font-bold text-gray-800">
+                OUR SERVICES
+              </div>
+
+              <div className="mt-1 text-[10px] font-medium text-gray-500">
+                EXPLORE ALL SERVICES
+              </div>
             </div>
 
-            <div className=" h-47 w-40.5 gap-2 border border-red-200 rounded-md">
-              <div className="h-30 w-40 object-cover  ">
+            {/* WEDDING PHOTOGRAPHY */}
+            <div className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm sm:h-47 sm:w-40.5 sm:shrink-0">
+              <Image
+                src={h2}
+                alt="Wedding Photography"
+                className="h-28 w-full object-cover sm:h-30 sm:w-40"
+              />
 
-                <Image src={p1} alt="Image 1" className="h-30 w-40 object-cover rounded-md" />
-              </div>
-              <div className="text-[9px] font-bold pt-2">
-                <p>
-                  WEDDING
-                </p>
-                <p>
-                  PHOTOGRAPHY
-                </p>
-                <p className="font-medium text-[8px] pt-0.2">
+              <div className="px-2 pt-2 text-[9px] font-bold text-gray-800">
+                <p>WEDDING</p>
+                <p className="text-[#C8A96A]">PHOTOGRAPHY</p>
+
+                <p className="pt-[2px] text-[8px] font-medium text-gray-500">
                   Candid, Traditional &
                 </p>
-                <p className="font-medium text-[8px]">
+
+                <p className="text-[8px] font-medium text-gray-500">
                   Timeless Moments
                 </p>
               </div>
-
             </div>
-            <div className=" h-47 w-40.5 gap-2 border border-red-200 rounded-md">
-              <div className="h-30 w-40 object-cover  ">
 
-                <Image src={p2} alt="Image 1" className="h-30 w-40 object-cover rounded-md" />
-              </div>
-              <div className="text-[9px] font-bold pt-2">
-                <p>
-                  PRE-WEDDING
-                </p>
-                <p>
-                  SHOOTS
-                </p>
-                <p className="font-medium text-[8px] pt-0.2">
+            {/* PRE-WEDDING */}
+            <div className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm sm:h-47 sm:w-40.5 sm:shrink-0">
+              <Image
+                src={h1}
+                alt="Pre-Wedding Shoots"
+                className="h-28 w-full object-cover sm:h-30 sm:w-40"
+              />
+
+              <div className="px-2 pt-2 text-[9px] font-bold text-gray-800">
+                <p>PRE-WEDDING</p>
+                <p className="text-[#C8A96A]">SHOOTS</p>
+
+                <p className="pt-[2px] text-[8px] font-medium text-gray-500">
                   Candid, Traditional &
                 </p>
-                <p className="font-medium text-[8px]">
+
+                <p className="text-[8px] font-medium text-gray-500">
                   Timeless Moments
                 </p>
               </div>
-
             </div>
 
-            <div className=" h-47 w-40.5 gap-2 border border-red-200 rounded-md">
-              <div className="h-30 w-40 object-cover  ">
+            {/* WEDDING FILMS */}
+            <div className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm sm:h-47 sm:w-40.5 sm:shrink-0">
+              <Image
+                src={h6}
+                alt="Wedding Films"
+                className="h-28 w-full object-cover sm:h-30 sm:w-40"
+              />
 
-                <Image src={p5} alt="Image 1" className="h-30 w-40 object-cover rounded-md" />
-              </div>
-              <div className="text-[9px] font-bold pt-2">
-                <p>
-                  WEDDING
+              <div className="px-2 pt-2 text-[9px] font-bold text-gray-800">
+                <p>WEDDING</p>
+                <p className="text-[#C8A96A]">FILMS</p>
+
+                <p className="pt-[2px] text-[8px] font-medium text-gray-500">
+                  Cinematic films that bring
                 </p>
-                <p>
-                  FILMS
-                </p>
-                <p className="font-medium text-[8px] pt-0.2">
-                  Chinematic films that bring
-                </p>
-                <p className="font-medium text-[8px]">
+
+                <p className="text-[8px] font-medium text-gray-500">
                   your story to life
                 </p>
               </div>
-
             </div>
 
+            {/* WEDDING ALBUMS */}
+            <div className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm sm:h-47 sm:w-40.5 sm:shrink-0">
+              <Image
+                src={ba}
+                alt="Wedding Albums"
+                className="h-28 w-full object-cover sm:h-30 sm:w-40"
+              />
 
-            <div className=" h-47 w-40.5 gap-2 border border-red-200 rounded-md">
-              <div className="h-30 w-40 object-cover  ">
+              <div className="px-2 pt-2 text-[9px] font-bold text-gray-800">
+                <p>WEDDING</p>
+                <p className="text-[#C8A96A]">ALBUMS</p>
 
-                <Image src={p4} alt="Image 1" className="h-30 w-40 object-cover rounded-md" />
+                <p className="pt-[2px] text-[8px] font-medium text-gray-500">
+                  Beautifully crafted &
+                </p>
+
+                <p className="text-[8px] font-medium text-gray-500">
+                  timeless memories
+                </p>
               </div>
-              <div className="text-[9px] font-bold pt-2">
-                <p>
-                  WEDDING
+            </div>
+
+            {/* DESTINATION WEDDINGS */}
+            <div className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm sm:h-47 sm:w-40.5 sm:shrink-0">
+              <Image
+                src={h5}
+                alt="Destination Weddings"
+                className="h-28 w-full object-cover sm:h-30 sm:w-40"
+              />
+
+              <div className="px-2 pt-2 text-[9px] font-bold text-gray-800">
+                <p>DESTINATION</p>
+                <p className="text-[#C8A96A]">WEDDINGS</p>
+
+                <p className="pt-[2px] text-[8px] font-medium text-gray-500">
+                  Cinematic films that bring
                 </p>
-                <p>
-                  ALBUMS
-                </p>
-                <p className="font-medium text-[8px] pt-0.2">
-                  Chinematic films that bring
-                </p>
-                <p className="font-medium text-[8px]">
+
+                <p className="text-[8px] font-medium text-gray-500">
                   your story to life
                 </p>
               </div>
-
             </div>
 
+            {/* DESTINATION WEDDINGS */}
+            <div className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm sm:h-47 sm:w-40.5 sm:shrink-0">
+              <Image
+                src={p4}
+                alt="Destination Weddings"
+                className="h-28 w-full object-cover sm:h-30 sm:w-40"
+              />
 
-            <div className=" h-47 w-40.5 gap-2 border border-red-200 rounded-md">
-              <div className="h-30 w-40 object-cover  ">
+              <div className="px-2 pt-2 text-[9px] font-bold text-gray-800">
+                <p>DESTINATION</p>
+                <p className="text-[#C8A96A]">WEDDINGS</p>
 
-                <Image src={p4} alt="Image 1" className="h-30 w-40 object-cover rounded-md" />
-              </div>
-              <div className="text-[9px] font-bold pt-2">
-                <p>
-                  DESTINATION
+                <p className="pt-[2px] text-[8px] font-medium text-gray-500">
+                  Cinematic films that bring
                 </p>
-                <p>
-                  WEDDINGS
-                </p>
-                <p className="font-medium text-[8px] pt-0.2">
-                  Chinematic films that bring
-                </p>
-                <p className="font-medium text-[8px]">
+
+                <p className="text-[8px] font-medium text-gray-500">
                   your story to life
                 </p>
               </div>
-
             </div>
-
-
-            <div className=" h-47 w-40.5 gap-2 border border-red-200 rounded-md">
-              <div className="h-30 w-40 object-cover  ">
-
-                <Image src={p4} alt="Image 1" className="h-30 w-40 object-cover rounded-md" />
-              </div>
-              <div className="text-[9px] font-bold pt-2">
-                <p>
-                  DESTINATION
-                </p>
-                <p>
-                  WEDDINGS
-                </p>
-                <p className="font-medium text-[8px] pt-0.2">
-                  Chinematic films that bring
-                </p>
-                <p className="font-medium text-[8px]">
-                  your story to life
-                </p>
-              </div>
-
-            </div>
-
-
-
 
           </div>
-
-
-
         </section>
+
+
 
 
 
@@ -890,34 +920,191 @@ export default function Homes() {
 
 
 
-        <section className=" bg-[#a2cecb82]">
 
-          <div className="flex pb-1.5 w-full flex-row pt-1.5 gap-2">
-            <div className="mt-3 ml-3 mr-3">
-              <p className="font-bold text-[#eadb0e]">FOLLOW OUR JOURNEY </p>
-              <p className="font-sans font-bold text-[#333130c6]">Instagram </p>
 
-              <p className="text-[12px]"> @innovative.photography</p>
 
+
+
+
+        <section className="w-full overflow-hidden bg-[#f7f5ef] py-3">
+
+          <motion.div
+            className="flex w-max items-center gap-2"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+
+            {/* FIRST SET */}
+
+            {/* Instagram Text */}
+            <div className="flex w-40 shrink-0 flex-col justify-center px-2">
+              <p className="text-[10px] font-bold tracking-[2px] text-[#C8A96A] sm:text-[11px]">
+                FOLLOW OUR JOURNEY
+              </p>
+
+              <p className="mt-1 font-serif text-base font-bold text-[#333130] sm:text-lg">
+                Instagram
+              </p>
+
+              <p className="mt-1 text-[9px] text-gray-500 sm:text-[10px]">
+                @innovative.photography
+              </p>
             </div>
 
-            <div>
-
-              <Image src={p1} alt="Image 1" className=" h-25 w-40 object-cover rounded-md" />
-
+            {/* Image 1 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h1}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
             </div>
 
-            <div>
-
-              <Image src={p5} alt="Image 1" className=" h-25 w-40 object-cover rounded-md" />
-
+            {/* Image 2 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p1}
+                alt="Photography"
+                className="h-full w-full object-cover"
+              />
             </div>
 
-          </div>
+            {/* Image 3 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h5}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            {/* Image 4 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p5}
+                alt="Photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            {/* Image 5 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h6}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-24 shrink-0 flex-col items-center justify-center px-2"
+            >
+              <Image
+                src={ii}
+                alt="Instagram"
+                className="h-6 w-6 object-contain"
+              />
+
+              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
+                FOLLOW
+              </p>
+
+              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
+                INSTAGRAM
+              </p>
+            </a>
 
 
+            {/* SECOND SET — seamless loop */}
+
+            <div className="flex w-40 shrink-0 flex-col justify-center px-2">
+              <p className="text-[10px] font-bold tracking-[2px] text-[#C8A96A] sm:text-[11px]">
+                FOLLOW OUR JOURNEY
+              </p>
+
+              <p className="mt-1 font-serif text-base font-bold text-[#333130] sm:text-lg">
+                Instagram
+              </p>
+
+              <p className="mt-1 text-[9px] text-gray-500 sm:text-[10px]">
+                @innovative.photography
+              </p>
+            </div>
+
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h1}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p1}
+                alt="Photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h5}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p5}
+                alt="Photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h6}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-24 shrink-0 flex-col items-center justify-center px-2"
+            >
+              <Image
+                src={ii}
+                alt="Instagram"
+                className="h-6 w-6 object-contain"
+              />
+
+              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
+                FOLLOW
+              </p>
+
+              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
+                INSTAGRAM
+              </p>
+            </a>
+
+          </motion.div>
 
         </section>
+
+
 
 
 
