@@ -298,12 +298,12 @@ export default function Homes() {
 
 
 
-        <section className="flex h-50 w-full text-center p-2">
+        <section className="flex h-54 w-full text-center p-2">
 
           <div className="flex flex-row gap-3 overflow-x-auto">
 
 
-            <div className="flex flex-col h-45 justify-start items-start pt-5 pl-5 ">
+            <div className="flex flex-col h-50 justify-start items-start pt-5 pl-5 ">
               <div className="text-[#f2de28ee]">WHAT WE DO</div>
               <div className="flex font-bold"> OUR Services</div>
 
@@ -313,20 +313,141 @@ export default function Homes() {
 
             </div>
 
-            <div className="bg-amber-600 h-45 w-40 ">
-              
+            <div className=" h-47 w-40.5 gap-2 border border-red-200 rounded-md">
+              <div className="h-30 w-40 object-cover  ">
+
+                <Image src={p1} alt="Image 1" className="h-30 w-40 object-cover rounded-md" />
+              </div>
+              <div className="text-[9px] font-bold pt-2">
+                <p>
+                  WEDDING
+                </p>
+                <p>
+                  PHOTOGRAPHY
+                </p>
+                <p className="font-medium text-[8px] pt-0.2">
+                  Candid, Traditional &
+                </p>
+                <p className="font-medium text-[8px]">
+                  Timeless Moments
+                </p>
+              </div>
+
+            </div>
+            <div className=" h-47 w-40.5 gap-2 border border-red-200 rounded-md">
+              <div className="h-30 w-40 object-cover  ">
+
+                <Image src={p2} alt="Image 1" className="h-30 w-40 object-cover rounded-md" />
+              </div>
+              <div className="text-[9px] font-bold pt-2">
+                <p>
+                  PRE-WEDDING
+                </p>
+                <p>
+                  SHOOTS
+                </p>
+                <p className="font-medium text-[8px] pt-0.2">
+                  Candid, Traditional &
+                </p>
+                <p className="font-medium text-[8px]">
+                  Timeless Moments
+                </p>
+              </div>
 
             </div>
 
-             <div className="bg-amber-600 h-45 w-40 ">
-              
+            <div className=" h-47 w-40.5 gap-2 border border-red-200 rounded-md">
+              <div className="h-30 w-40 object-cover  ">
+
+                <Image src={p5} alt="Image 1" className="h-30 w-40 object-cover rounded-md" />
+              </div>
+              <div className="text-[9px] font-bold pt-2">
+                <p>
+                  WEDDING
+                </p>
+                <p>
+                  FILMS
+                </p>
+                <p className="font-medium text-[8px] pt-0.2">
+                  Chinematic films that bring
+                </p>
+                <p className="font-medium text-[8px]">
+                  your story to life
+                </p>
+              </div>
 
             </div>
 
-            <div className="bg-amber-600 h-45 w-40 ">
-              
+
+            <div className=" h-47 w-40.5 gap-2 border border-red-200 rounded-md">
+              <div className="h-30 w-40 object-cover  ">
+
+                <Image src={p4} alt="Image 1" className="h-30 w-40 object-cover rounded-md" />
+              </div>
+              <div className="text-[9px] font-bold pt-2">
+                <p>
+                  WEDDING
+                </p>
+                <p>
+                  ALBUMS
+                </p>
+                <p className="font-medium text-[8px] pt-0.2">
+                  Chinematic films that bring
+                </p>
+                <p className="font-medium text-[8px]">
+                  your story to life
+                </p>
+              </div>
 
             </div>
+
+
+            <div className=" h-47 w-40.5 gap-2 border border-red-200 rounded-md">
+              <div className="h-30 w-40 object-cover  ">
+
+                <Image src={p4} alt="Image 1" className="h-30 w-40 object-cover rounded-md" />
+              </div>
+              <div className="text-[9px] font-bold pt-2">
+                <p>
+                  DESTINATION
+                </p>
+                <p>
+                  WEDDINGS
+                </p>
+                <p className="font-medium text-[8px] pt-0.2">
+                  Chinematic films that bring
+                </p>
+                <p className="font-medium text-[8px]">
+                  your story to life
+                </p>
+              </div>
+
+            </div>
+
+
+            <div className=" h-47 w-40.5 gap-2 border border-red-200 rounded-md">
+              <div className="h-30 w-40 object-cover  ">
+
+                <Image src={p4} alt="Image 1" className="h-30 w-40 object-cover rounded-md" />
+              </div>
+              <div className="text-[9px] font-bold pt-2">
+                <p>
+                  DESTINATION
+                </p>
+                <p>
+                  WEDDINGS
+                </p>
+                <p className="font-medium text-[8px] pt-0.2">
+                  Chinematic films that bring
+                </p>
+                <p className="font-medium text-[8px]">
+                  your story to life
+                </p>
+              </div>
+
+            </div>
+
+
 
 
           </div>
@@ -769,7 +890,34 @@ export default function Homes() {
 
 
 
+        <section className=" bg-[#a2cecb82]">
 
+          <div className="flex pb-1.5 w-full flex-row pt-1.5 gap-2">
+            <div className="mt-3 ml-3 mr-3">
+              <p className="font-bold text-[#eadb0e]">FOLLOW OUR JOURNEY </p>
+              <p className="font-sans font-bold text-[#333130c6]">Instagram </p>
+
+              <p className="text-[12px]"> @innovative.photography</p>
+
+            </div>
+
+            <div>
+
+              <Image src={p1} alt="Image 1" className=" h-25 w-40 object-cover rounded-md" />
+
+            </div>
+
+            <div>
+
+              <Image src={p5} alt="Image 1" className=" h-25 w-40 object-cover rounded-md" />
+
+            </div>
+
+          </div>
+
+
+
+        </section>
 
 
 
