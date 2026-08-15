@@ -321,16 +321,6 @@ export default function Homes() {
 
 
 
-
-
-
-
-
-
-
-
-
-
         <section className="w-full px-2 py-5">
           <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-row sm:gap-3 sm:overflow-x-auto sm:pb-2">
 
@@ -491,114 +481,115 @@ export default function Homes() {
 
 
 
-
-
-        <section onClick={() => router.push("/services")} className="w-full  bg-[#454748] p-1">
-
-
+        <section
+          onClick={() => router.push("/services")}
+          className="w-full bg-white py-2 cursor-pointer"
+        >
           <div className="w-full overflow-hidden">
+
             <div
               className="flex w-max gap-4"
               style={{
                 animation: "serviceScroll 25s linear infinite",
               }}
             >
+
               {/* ================= FIRST SET ================= */}
 
               {/* Photography */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border  border-[#a9a288] p-3">
-                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
-                  <Camera className="w-9 h-9 text-[#d4a72c]" />
+              <div className="group flex items-center w-[220px] min-w-[220px] h-[80px] rounded-xl border border-gray-200 bg-white px-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-[#d4a72c]/10">
+                  <Camera className="w-7 h-7 text-[#d4a72c]" />
                 </div>
 
                 <div className="ml-3">
-                  <p className="text-[#e0b83f] text-sm font-semibold">
+                  <p className="text-gray-900 text-sm font-semibold">
                     Photography
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="mt-1 text-gray-500 text-xs">
                     Capturing real moments
                   </p>
                 </div>
               </div>
 
               {/* Videography */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg  border  border-[#a9a288] p-3   cursor-pointer hover:text-blue-500 transition-colors">
-                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
-                  <Video className="w-9 h-9 text-[#d4a72c]" />
+              <div className="group flex items-center w-[220px] min-w-[220px] h-[80px] rounded-xl border border-gray-200 bg-white px-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-[#0083c4]/10">
+                  <Video className="w-7 h-7 text-[#0083c4]" />
                 </div>
 
                 <div className="ml-3">
-                  <p className="text-[#e0b83f] text-sm font-semibold">
+                  <p className="text-gray-900 text-sm font-semibold">
                     Videography
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="mt-1 text-gray-500 text-xs">
                     Cinematic films that
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="text-gray-500 text-xs">
                     tell your story
                   </p>
                 </div>
               </div>
 
               {/* Drone */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border border-[#a9a288] p-3">
-                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
-                  <Drone className="w-9 h-9 text-[#d4a72c]" />
+              <div className="group flex items-center w-[220px] min-w-[220px] h-[80px] rounded-xl border border-gray-200 bg-white px-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-[#d4a72c]/10">
+                  <Drone className="w-7 h-7 text-[#d4a72c]" />
                 </div>
 
                 <div className="ml-3">
-                  <p className="text-[#e0b83f] text-sm font-semibold">
+                  <p className="text-gray-900 text-sm font-semibold">
                     Drone Shots
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="mt-1 text-gray-500 text-xs">
                     View from above
                   </p>
                 </div>
               </div>
 
               {/* Editing */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border  border-[#a9a288] p-3">
-                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
-                  <Edit className="w-9 h-9 text-[#d4a72c]" />
+              <div className="group flex items-center w-[220px] min-w-[220px] h-[80px] rounded-xl border border-gray-200 bg-white px-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-[#0083c4]/10">
+                  <Edit className="w-7 h-7 text-[#0083c4]" />
                 </div>
 
                 <div className="ml-3">
-                  <p className="text-[#e0b83f] text-sm font-semibold">
+                  <p className="text-gray-900 text-sm font-semibold">
                     Editing
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="mt-1 text-gray-500 text-xs">
                     Professional editing
                   </p>
                 </div>
               </div>
 
               {/* Events */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg  border  border-[#a9a288] p-3">
-                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
-                  <CalendarDays className="w-9 h-9 text-[#d4a72c]" />
+              <div className="group flex items-center w-[220px] min-w-[220px] h-[80px] rounded-xl border border-gray-200 bg-white px-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-[#d4a72c]/10">
+                  <CalendarDays className="w-7 h-7 text-[#d4a72c]" />
                 </div>
 
                 <div className="ml-3">
-                  <p className="text-[#e0b83f] text-sm font-semibold">
+                  <p className="text-gray-900 text-sm font-semibold">
                     Events
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="mt-1 text-gray-500 text-xs">
                     Special moments
                   </p>
                 </div>
               </div>
 
               {/* Travel */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border  border-[#a9a288] p-3">
-                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
-                  <Plane className="w-9 h-9 text-[#d4a72c]" />
+              <div className="group flex items-center w-[220px] min-w-[220px] h-[80px] rounded-xl border border-gray-200 bg-white px-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-[#0083c4]/10">
+                  <Plane className="w-7 h-7 text-[#0083c4]" />
                 </div>
 
                 <div className="ml-3">
-                  <p className="text-[#e0b83f] text-sm font-semibold">
+                  <p className="text-gray-900 text-sm font-semibold">
                     Travel
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="mt-1 text-gray-500 text-xs">
                     Explore & capture
                   </p>
                 </div>
@@ -608,130 +599,123 @@ export default function Homes() {
               {/* ================= DUPLICATE SET ================= */}
 
               {/* Photography */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg  border border-[#a9a288] p-3">
-                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
-                  <Camera className="w-9 h-9 text-[#d4a72c]" />
+              <div className="flex items-center w-[220px] min-w-[220px] h-[80px] rounded-xl border border-gray-200 bg-white px-3 shadow-sm">
+                <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-[#d4a72c]/10">
+                  <Camera className="w-7 h-7 text-[#d4a72c]" />
                 </div>
 
                 <div className="ml-3">
-                  <p className="text-[#e0b83f] text-sm font-semibold">
+                  <p className="text-gray-900 text-sm font-semibold">
                     Photography
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="mt-1 text-gray-500 text-xs">
                     Capturing real moments
                   </p>
                 </div>
               </div>
 
               {/* Videography */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border  border-[#a9a288] p-3">
-                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
-                  <Video className="w-9 h-9 text-[#d4a72c]" />
+              <div className="flex items-center w-[220px] min-w-[220px] h-[80px] rounded-xl border border-gray-200 bg-white px-3 shadow-sm">
+                <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-[#0083c4]/10">
+                  <Video className="w-7 h-7 text-[#0083c4]" />
                 </div>
 
                 <div className="ml-3">
-                  <p className="text-[#e0b83f] text-sm font-semibold">
+                  <p className="text-gray-900 text-sm font-semibold">
                     Videography
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="mt-1 text-gray-500 text-xs">
                     Cinematic films that
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="text-gray-500 text-xs">
                     tell your story
                   </p>
                 </div>
               </div>
 
               {/* Drone */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border  border-[#a9a288] p-3">
-                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
-                  <Drone className="w-9 h-9 text-[#d4a72c]" />
+              <div className="flex items-center w-[220px] min-w-[220px] h-[80px] rounded-xl border border-gray-200 bg-white px-3 shadow-sm">
+                <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-[#d4a72c]/10">
+                  <Drone className="w-7 h-7 text-[#d4a72c]" />
                 </div>
 
                 <div className="ml-3">
-                  <p className="text-[#e0b83f] text-sm font-semibold">
+                  <p className="text-gray-900 text-sm font-semibold">
                     Drone Shots
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="mt-1 text-gray-500 text-xs">
                     View from above
                   </p>
                 </div>
               </div>
 
               {/* Editing */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg  border  border-[#a9a288] p-3">
-                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
-                  <Edit className="w-9 h-9 text-[#d4a72c]" />
+              <div className="flex items-center w-[220px] min-w-[220px] h-[80px] rounded-xl border border-gray-200 bg-white px-3 shadow-sm">
+                <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-[#0083c4]/10">
+                  <Edit className="w-7 h-7 text-[#0083c4]" />
                 </div>
 
                 <div className="ml-3">
-                  <p className="text-[#e0b83f] text-sm font-semibold">
+                  <p className="text-gray-900 text-sm font-semibold">
                     Editing
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="mt-1 text-gray-500 text-xs">
                     Professional editing
                   </p>
                 </div>
               </div>
 
               {/* Events */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg border  border-[#a9a288] p-3">
-                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
-                  <CalendarDays className="w-9 h-9 text-[#d4a72c]" />
+              <div className="flex items-center w-[220px] min-w-[220px] h-[80px] rounded-xl border border-gray-200 bg-white px-3 shadow-sm">
+                <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-[#d4a72c]/10">
+                  <CalendarDays className="w-7 h-7 text-[#d4a72c]" />
                 </div>
 
                 <div className="ml-3">
-                  <p className="text-[#e0b83f] text-sm font-semibold">
+                  <p className="text-gray-900 text-sm font-semibold">
                     Events
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="mt-1 text-gray-500 text-xs">
                     Special moments
                   </p>
                 </div>
               </div>
 
               {/* Travel */}
-              <div className="flex items-center w-[220px] min-w-[220px] h-[100px] rounded-lg  border border-[#a9a288] p-3">
-                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
-                  <Plane className="w-9 h-9 text-[#d4a72c]" />
+              <div className="flex items-center w-[220px] min-w-[220px] h-[80px] rounded-xl border border-gray-200 bg-white px-3 shadow-sm">
+                <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-[#0083c4]/10">
+                  <Plane className="w-7 h-7 text-[#0083c4]" />
                 </div>
 
                 <div className="ml-3">
-                  <p className="text-[#e0b83f] text-sm font-semibold">
+                  <p className="text-gray-900 text-sm font-semibold">
                     Travel
                   </p>
-                  <p className="text-[#a3a3a3] text-xs">
+                  <p className="mt-1 text-gray-500 text-xs">
                     Explore & capture
                   </p>
                 </div>
               </div>
 
-              {/* ================= INLINE ANIMATION ================= */}
-
-              <style jsx>{`
-      @keyframes serviceScroll {
-        from {
-          transform: translateX(0);
-        }
-
-        to {
-          transform: translateX(-50%);
-        }
-      }
-
-      div[style*="serviceScroll"]:hover {
-        animation-play-state: paused !important;
-      }
-    `}</style>
-
             </div>
           </div>
 
+          <style jsx>{`
+    @keyframes serviceScroll {
+      from {
+        transform: translateX(0);
+      }
 
+      to {
+        transform: translateX(-50%);
+      }
+    }
 
+    div[style*="serviceScroll"]:hover {
+      animation-play-state: paused !important;
+    }
+  `}</style>
         </section>
-
-
 
 
 

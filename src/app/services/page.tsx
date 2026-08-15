@@ -253,6 +253,7 @@ const hearts = [
 
 // =====================================================
 // SERVICE CARD
+// SAME SIZE: h-[145px]
 // =====================================================
 
 function ServiceCard({
@@ -270,25 +271,23 @@ function ServiceCard({
     <motion.article
       initial={{
         opacity: 0,
-        y: 35,
-        scale: 0.96,
+        y: 30,
       }}
       whileInView={{
         opacity: 1,
         y: 0,
-        scale: 1,
       }}
       viewport={{
         once: true,
-        amount: 0.1,
+        amount: 0.15,
       }}
       transition={{
-        duration: 0.55,
+        duration: 0.5,
         delay: (index % 4) * 0.06,
         ease: [0.22, 1, 0.36, 1],
       }}
       whileHover={{
-        y: -7,
+        y: -5,
       }}
       onClick={onClick}
       className="
@@ -299,23 +298,26 @@ function ServiceCard({
         overflow-hidden
         rounded-2xl
         border
-        border-white/10
-        bg-zinc-950
-        shadow-xl
-        transition-colors
+        border-gray-200
+        bg-white
+        shadow-sm
+        transition-all
         duration-300
-        hover:border-orange-400/50
+        hover:border-orange-300
+        hover:shadow-lg
       "
     >
-      {/* IMAGE */}
+      {/* =================================================
+          IMAGE
+      ================================================= */}
 
       <motion.div
         className="absolute inset-0"
         whileHover={{
-          scale: 1.08,
+          scale: 1.06,
         }}
         transition={{
-          duration: 0.7,
+          duration: 0.6,
           ease: [0.22, 1, 0.36, 1],
         }}
       >
@@ -326,33 +328,40 @@ function ServiceCard({
           sizes="
             (max-width: 640px) 100vw,
             (max-width: 1024px) 50vw,
-            33vw
+            25vw
           "
           loading={index < 4 ? "eager" : "lazy"}
           className="
             object-cover
-            brightness-75
+            brightness-[0.72]
             transition-all
             duration-500
-            group-hover:brightness-100
+            group-hover:brightness-[0.82]
           "
         />
       </motion.div>
 
-      {/* OVERLAY */}
+      {/* =================================================
+          DARK GRADIENT
+      ================================================= */}
 
       <div
         className="
           absolute
           inset-0
           bg-gradient-to-r
-          from-black/80
-          via-black/45
+          from-black/75
+          via-black/35
           to-black/10
+          transition-all
+          duration-300
+          group-hover:from-black/65
         "
       />
 
-      {/* ORANGE GLOW */}
+      {/* =================================================
+          ORANGE HOVER
+      ================================================= */}
 
       <div
         className="
@@ -360,61 +369,161 @@ function ServiceCard({
           inset-0
           bg-orange-500/0
           transition-all
-          duration-500
+          duration-300
           group-hover:bg-orange-500/10
         "
       />
 
-      {/* CONTENT */}
+      {/* =================================================
+          TOP ROW
+      ================================================= */}
 
-      <div className="relative z-10 flex h-full flex-col justify-between p-4">
-        <div className="flex items-start justify-between">
-          <motion.div
-            whileHover={{
-              rotate: 5,
-              scale: 1.1,
-            }}
+      <div
+        className="
+          absolute
+          left-4
+          right-4
+          top-4
+          flex
+          items-start
+          justify-between
+        "
+      >
+        {/* ICON */}
+
+        <motion.div
+          whileHover={{
+            scale: 1.08,
+            rotate: 4,
+          }}
+          transition={{
+            duration: 0.25,
+          }}
+          className="
+            flex
+            h-9
+            w-9
+            items-center
+            justify-center
+            rounded-xl
+            border
+            border-white/30
+            bg-white/15
+            text-white
+            backdrop-blur-md
+            transition-all
+            duration-300
+            group-hover:border-orange-300
+            group-hover:bg-orange-500
+          "
+        >
+          <Icon
+            size={18}
+            strokeWidth={1.8}
+          />
+        </motion.div>
+
+        {/* NUMBER */}
+
+        <div className="flex items-center gap-2">
+          <span
             className="
-              flex
-              h-10
-              w-10
-              items-center
-              justify-center
-              rounded-xl
-              border
-              border-orange-400/30
-              bg-black/50
-              text-orange-400
-              backdrop-blur-md
+              h-px
+              w-4
+              bg-white/40
             "
-          >
-            <Icon size={20} strokeWidth={1.8} />
-          </motion.div>
+          />
 
           <span
             className="
               text-[10px]
               font-semibold
-              tracking-widest
-              text-white/50
+              tracking-[2px]
+              text-white/80
             "
           >
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>
+      </div>
 
-        <div>
-          <h3 className="text-lg font-bold text-white">
-            {service.title}
-          </h3>
+      {/* =================================================
+          BOTTOM CONTENT
+      ================================================= */}
 
-          <p className="mt-0.5 text-xs text-gray-300">
+      <div
+        className="
+          absolute
+          bottom-0
+          left-0
+          right-0
+          p-4
+        "
+      >
+        {/* LABEL */}
+
+        <p
+          className="
+            mb-0.5
+            text-[8px]
+            font-semibold
+            uppercase
+            tracking-[2px]
+            text-orange-300
+          "
+        >
+          Professional Service
+        </p>
+
+        {/* TITLE */}
+
+        <h3
+          className="
+            text-lg
+            font-bold
+            leading-tight
+            text-white
+            transition-transform
+            duration-300
+            group-hover:-translate-y-0.5
+          "
+        >
+          {service.title}
+        </h3>
+
+        {/* DESCRIPTION + ARROW */}
+
+        <div className="mt-0.5 flex items-center justify-between">
+          <p
+            className="
+              text-[11px]
+              text-white/70
+              transition-colors
+              duration-300
+              group-hover:text-white
+            "
+          >
             {service.text}
           </p>
+
+          <ArrowRight
+            size={14}
+            className="
+              text-orange-300
+              opacity-0
+              -translate-x-2
+              transition-all
+              duration-300
+              group-hover:translate-x-0
+              group-hover:opacity-100
+            "
+          />
         </div>
       </div>
 
-      {/* BOTTOM LINE */}
+      {/* =================================================
+          BOTTOM ORANGE LINE
+      ================================================= */}
 
       <motion.div
         initial={{
@@ -423,12 +532,15 @@ function ServiceCard({
         whileHover={{
           width: "100%",
         }}
+        transition={{
+          duration: 0.35,
+        }}
         className="
           absolute
           bottom-0
           left-0
           h-[2px]
-          bg-orange-400
+          bg-orange-500
         "
       />
     </motion.article>
@@ -446,7 +558,7 @@ export default function Services() {
     <>
       <Header />
 
-      <main className="relative min-h-screen overflow-hidden bg-[#050505] text-white">
+      <main className="relative min-h-screen overflow-hidden bg-white text-gray-900">
 
         {/* =================================================
             BACKGROUND
@@ -457,7 +569,7 @@ export default function Services() {
             pointer-events-none
             absolute
             inset-0
-            bg-[radial-gradient(circle_at_50%_0%,rgba(249,115,22,0.14),transparent_32%),radial-gradient(circle_at_10%_45%,rgba(236,72,153,0.07),transparent_28%),radial-gradient(circle_at_90%_70%,rgba(249,115,22,0.08),transparent_28%)]
+            bg-[radial-gradient(circle_at_50%_0%,rgba(249,115,22,0.10),transparent_32%),radial-gradient(circle_at_10%_45%,rgba(236,72,153,0.04),transparent_28%),radial-gradient(circle_at_90%_70%,rgba(249,115,22,0.05),transparent_28%)]
           "
         />
 
@@ -473,7 +585,7 @@ export default function Services() {
             w-[500px]
             -translate-x-1/2
             rounded-full
-            bg-orange-500/10
+            bg-orange-500/5
             blur-[130px]
           "
           animate={{
@@ -487,7 +599,7 @@ export default function Services() {
           }}
         />
 
-        {/* SIDE GLOW */}
+        {/* LEFT GLOW */}
 
         <motion.div
           className="
@@ -498,13 +610,13 @@ export default function Services() {
             h-[450px]
             w-[450px]
             rounded-full
-            bg-pink-500/10
+            bg-pink-500/5
             blur-[130px]
           "
           animate={{
             x: [0, 100, 0],
             y: [0, 70, 0],
-            opacity: [0.15, 0.4, 0.15],
+            opacity: [0.15, 0.35, 0.15],
           }}
           transition={{
             duration: 11,
@@ -524,13 +636,13 @@ export default function Services() {
             h-[450px]
             w-[450px]
             rounded-full
-            bg-orange-500/10
+            bg-orange-500/5
             blur-[130px]
           "
           animate={{
             x: [0, -70, 0],
             y: [0, -50, 0],
-            opacity: [0.15, 0.4, 0.15],
+            opacity: [0.15, 0.35, 0.15],
           }}
           transition={{
             duration: 12,
@@ -555,7 +667,7 @@ export default function Services() {
               y: [0, -25, 0],
               x: [0, 10, 0],
               rotate: [-7, 7, -7],
-              opacity: [0.1, 0.35, 0.1],
+              opacity: [0.08, 0.25, 0.08],
             }}
             transition={{
               duration: 5 + index * 0.3,
@@ -574,7 +686,7 @@ export default function Services() {
         ))}
 
         {/* =================================================
-            CONTENT
+            PAGE CONTENT
         ================================================= */}
 
         <div className="relative z-10">
@@ -604,7 +716,7 @@ export default function Services() {
               <div className="mb-5 flex items-center justify-center gap-3">
                 <span className="h-px w-8 bg-orange-400/50" />
 
-                <p className="text-xs font-semibold uppercase tracking-[5px] text-orange-400 sm:text-sm">
+                <p className="text-xs font-semibold uppercase tracking-[5px] text-orange-500 sm:text-sm">
                   Our Services
                 </p>
 
@@ -626,29 +738,30 @@ export default function Services() {
               >
                 <Heart
                   size={21}
-                  className="text-orange-400"
+                  className="text-orange-500"
                   fill="currentColor"
                 />
               </motion.div>
 
-              {/* HEADING */}
+              {/* TITLE */}
 
-              <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-8xl">
+              <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-8xl">
                 What We
-                <span className="block text-orange-400">
+                <span className="block text-orange-500">
                   Create
                 </span>
               </h1>
 
-              <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-gray-400 sm:text-base lg:text-lg">
+              <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-gray-600 sm:text-base lg:text-lg">
                 Professional photography, cinematic videography and
                 creative visual services designed to turn your moments
                 into unforgettable stories.
               </p>
 
-              {/* CTA */}
+              {/* BUTTONS */}
 
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+
                 <button
                   type="button"
                   onClick={() => router.push("/book")}
@@ -663,10 +776,12 @@ export default function Services() {
                     py-3
                     text-sm
                     font-semibold
-                    text-black
+                    text-white
+                    shadow-lg
+                    shadow-orange-500/20
                     transition
-                    hover:bg-orange-400
                     hover:scale-105
+                    hover:bg-orange-600
                   "
                 >
                   Book Your Session
@@ -683,21 +798,22 @@ export default function Services() {
                   className="
                     rounded-full
                     border
-                    border-white/10
-                    bg-white/5
+                    border-gray-200
+                    bg-white
                     px-7
                     py-3
                     text-sm
                     font-semibold
-                    text-white
-                    backdrop-blur
+                    text-gray-800
+                    shadow-sm
                     transition
-                    hover:border-orange-400/40
-                    hover:bg-white/10
+                    hover:border-orange-300
+                    hover:bg-orange-50
                   "
                 >
                   View Portfolio
                 </button>
+
               </div>
             </motion.div>
           </section>
@@ -709,24 +825,29 @@ export default function Services() {
           <section className="px-5 pb-24 sm:px-6 lg:px-10">
             <div className="mx-auto max-w-7xl">
 
-              <div className="mb-10 flex items-end justify-between gap-5">
+              <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[4px] text-orange-400">
+                  <p className="text-xs font-semibold uppercase tracking-[4px] text-orange-500">
                     What We Offer
                   </p>
 
-                  <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+                  <h2 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
                     Creative Services
                   </h2>
                 </div>
 
-                <p className="hidden max-w-md text-right text-sm leading-6 text-gray-500 md:block">
+                <p className="max-w-md text-sm leading-6 text-gray-500 md:text-right">
                   From intimate portraits to large events, we create
                   visuals that feel authentic, cinematic and timeless.
                 </p>
+
               </div>
 
+              {/* SAME GRID */}
+
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
                 {services.map((service, index) => (
                   <ServiceCard
                     key={service.title}
@@ -735,7 +856,9 @@ export default function Services() {
                     onClick={() => router.push("/book")}
                   />
                 ))}
+
               </div>
+
             </div>
           </section>
 
@@ -743,7 +866,7 @@ export default function Services() {
               FEATURE SECTION
           ================================================= */}
 
-          <section className="border-y border-white/10 bg-zinc-950/70 px-5 py-24 sm:px-6 lg:px-10">
+          <section className="border-y border-gray-200 bg-gray-50 px-5 py-24 sm:px-6 lg:px-10">
             <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
 
               <motion.div
@@ -763,18 +886,18 @@ export default function Services() {
                   duration: 0.7,
                 }}
               >
-                <p className="text-xs font-semibold uppercase tracking-[4px] text-orange-400">
+                <p className="text-xs font-semibold uppercase tracking-[4px] text-orange-500">
                   Photography
                 </p>
 
-                <h2 className="mt-4 text-4xl font-bold sm:text-5xl lg:text-6xl">
+                <h2 className="mt-4 text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">
                   We Capture
-                  <span className="block text-orange-400">
+                  <span className="block text-orange-500">
                     The Moment
                   </span>
                 </h2>
 
-                <p className="mt-6 max-w-xl text-sm leading-7 text-gray-400 sm:text-base">
+                <p className="mt-6 max-w-xl text-sm leading-7 text-gray-600 sm:text-base">
                   Every photograph should tell a story. We focus on
                   genuine emotions, natural expressions, beautiful
                   details and moments that you will want to remember.
@@ -791,7 +914,7 @@ export default function Services() {
                     gap-2
                     text-sm
                     font-semibold
-                    text-orange-400
+                    text-orange-500
                   "
                 >
                   Explore Photography
@@ -824,7 +947,9 @@ export default function Services() {
                   overflow-hidden
                   rounded-3xl
                   border
-                  border-white/10
+                  border-gray-200
+                  bg-white
+                  shadow-xl
                   sm:h-[450px]
                 "
               >
@@ -839,13 +964,15 @@ export default function Services() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
                 <div className="absolute bottom-6 left-6">
+
                   <p className="text-xs uppercase tracking-[3px] text-orange-400">
                     Visual Storytelling
                   </p>
 
-                  <p className="mt-2 text-2xl font-bold">
+                  <p className="mt-2 text-2xl font-bold text-white">
                     Moments That Matter
                   </p>
+
                 </div>
               </motion.div>
 
@@ -860,21 +987,23 @@ export default function Services() {
             <div className="mx-auto max-w-7xl">
 
               <div className="mx-auto max-w-2xl text-center">
-                <p className="text-xs font-semibold uppercase tracking-[4px] text-orange-400">
+
+                <p className="text-xs font-semibold uppercase tracking-[4px] text-orange-500">
                   Packages
                 </p>
 
-                <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+                <h2 className="mt-4 text-4xl font-bold text-gray-900 sm:text-5xl">
                   Choose Your
-                  <span className="text-orange-400">
+                  <span className="text-orange-500">
                     {" "}Experience
                   </span>
                 </h2>
 
-                <p className="mt-5 text-sm leading-7 text-gray-400">
+                <p className="mt-5 text-sm leading-7 text-gray-600">
                   Flexible packages designed for photography,
                   videography and complete event coverage.
                 </p>
+
               </div>
 
               <div className="mt-14 grid gap-5 md:grid-cols-3">
@@ -908,13 +1037,14 @@ export default function Services() {
                       transition
                       ${
                         pkg.featured
-                          ? "border-orange-400 bg-orange-500 text-black"
-                          : "border-white/10 bg-zinc-950"
+                          ? "border-orange-500 bg-orange-500 text-white shadow-xl shadow-orange-500/20"
+                          : "border-gray-200 bg-white text-gray-900 shadow-sm hover:shadow-xl"
                       }
                     `}
                   >
+
                     {pkg.featured && (
-                      <div className="absolute right-5 top-5 rounded-full bg-black px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-orange-400">
+                      <div className="absolute right-5 top-5 rounded-full bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-orange-500">
                         Popular
                       </div>
                     )}
@@ -927,8 +1057,8 @@ export default function Services() {
                         tracking-[2px]
                         ${
                           pkg.featured
-                            ? "text-black/60"
-                            : "text-orange-400"
+                            ? "text-white/70"
+                            : "text-orange-500"
                         }
                       `}
                     >
@@ -945,18 +1075,20 @@ export default function Services() {
                         h-px
                         ${
                           pkg.featured
-                            ? "bg-black/20"
-                            : "bg-white/10"
+                            ? "bg-white/30"
+                            : "bg-gray-200"
                         }
                       `}
                     />
 
                     <div className="space-y-4">
+
                       {pkg.features.map((feature) => (
                         <div
                           key={feature}
                           className="flex items-center gap-3"
                         >
+
                           <span
                             className={`
                               flex
@@ -968,19 +1100,24 @@ export default function Services() {
                               rounded-full
                               ${
                                 pkg.featured
-                                  ? "bg-black text-orange-400"
-                                  : "bg-orange-500/10 text-orange-400"
+                                  ? "bg-white text-orange-500"
+                                  : "bg-orange-50 text-orange-500"
                               }
                             `}
                           >
-                            <Check size={13} strokeWidth={3} />
+                            <Check
+                              size={13}
+                              strokeWidth={3}
+                            />
                           </span>
 
                           <span className="text-sm">
                             {feature}
                           </span>
+
                         </div>
                       ))}
+
                     </div>
 
                     <button
@@ -1001,14 +1138,16 @@ export default function Services() {
                         transition
                         ${
                           pkg.featured
-                            ? "bg-black text-white hover:bg-zinc-800"
-                            : "bg-orange-500 text-black hover:bg-orange-400"
+                            ? "bg-white text-orange-500 hover:bg-gray-100"
+                            : "bg-orange-500 text-white hover:bg-orange-600"
                         }
                       `}
                     >
                       Get Started
+
                       <ArrowRight size={15} />
                     </button>
+
                   </motion.div>
                 ))}
 
@@ -1020,20 +1159,22 @@ export default function Services() {
               PROCESS
           ================================================= */}
 
-          <section className="border-y border-white/10 bg-zinc-950/70 px-5 py-24 sm:px-6 lg:px-10">
+          <section className="border-y border-gray-200 bg-gray-50 px-5 py-24 sm:px-6 lg:px-10">
             <div className="mx-auto max-w-7xl">
 
               <div className="text-center">
-                <p className="text-xs font-semibold uppercase tracking-[4px] text-orange-400">
+
+                <p className="text-xs font-semibold uppercase tracking-[4px] text-orange-500">
                   Our Process
                 </p>
 
-                <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+                <h2 className="mt-4 text-4xl font-bold text-gray-900 sm:text-5xl">
                   Simple Process.
-                  <span className="text-orange-400">
+                  <span className="text-orange-500">
                     {" "}Beautiful Results.
                   </span>
                 </h2>
+
               </div>
 
               <div className="mt-14 grid gap-4 md:grid-cols-4">
@@ -1059,22 +1200,29 @@ export default function Services() {
                     className="
                       rounded-2xl
                       border
-                      border-white/10
-                      bg-black
+                      border-gray-200
+                      bg-white
                       p-6
+                      shadow-sm
+                      transition
+                      hover:-translate-y-1
+                      hover:border-orange-200
+                      hover:shadow-lg
                     "
                   >
-                    <span className="text-4xl font-bold text-orange-400">
+
+                    <span className="text-4xl font-bold text-orange-500">
                       {item.number}
                     </span>
 
-                    <h3 className="mt-6 text-xl font-semibold">
+                    <h3 className="mt-6 text-xl font-semibold text-gray-900">
                       {item.title}
                     </h3>
 
-                    <p className="mt-3 text-sm leading-6 text-gray-400">
+                    <p className="mt-3 text-sm leading-6 text-gray-600">
                       {item.text}
                     </p>
+
                   </motion.div>
                 ))}
 
@@ -1105,25 +1253,28 @@ export default function Services() {
                   duration: 0.7,
                 }}
               >
-                <p className="text-xs font-semibold uppercase tracking-[4px] text-orange-400">
+
+                <p className="text-xs font-semibold uppercase tracking-[4px] text-orange-500">
                   Why Choose Us
                 </p>
 
-                <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+                <h2 className="mt-4 text-4xl font-bold text-gray-900 sm:text-5xl">
                   Your Moments.
-                  <span className="block text-orange-400">
+                  <span className="block text-orange-500">
                     Our Vision.
                   </span>
                 </h2>
 
-                <p className="mt-6 max-w-xl text-sm leading-7 text-gray-400 sm:text-base">
+                <p className="mt-6 max-w-xl text-sm leading-7 text-gray-600 sm:text-base">
                   We combine professional equipment, creative direction
                   and genuine storytelling to create visuals that feel
                   personal, natural and timeless.
                 </p>
+
               </motion.div>
 
               <div className="grid gap-3 sm:grid-cols-2">
+
                 {whyUs.map((item, index) => (
                   <motion.div
                     key={item}
@@ -1145,38 +1296,50 @@ export default function Services() {
                     className="
                       rounded-2xl
                       border
-                      border-white/10
-                      bg-zinc-950
+                      border-gray-200
+                      bg-white
                       p-5
+                      shadow-sm
+                      transition
+                      hover:border-orange-200
+                      hover:shadow-md
                     "
                   >
+
                     <div className="flex items-center gap-3">
-                      <span className="
-                        flex
-                        h-9
-                        w-9
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-orange-500/10
-                        text-orange-400
-                      ">
-                        <Check size={15} strokeWidth={3} />
+
+                      <span
+                        className="
+                          flex
+                          h-9
+                          w-9
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-full
+                          bg-orange-50
+                          text-orange-500
+                        "
+                      >
+                        <Check
+                          size={15}
+                          strokeWidth={3}
+                        />
                       </span>
 
-                      <span className="text-sm font-medium">
+                      <span className="text-sm font-medium text-gray-800">
                         {item}
                       </span>
+
                     </div>
+
                   </motion.div>
                 ))}
+
               </div>
 
             </div>
           </section>
-
-        
 
         </div>
       </main>
