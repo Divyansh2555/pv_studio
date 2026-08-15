@@ -23,10 +23,28 @@ import h5 from "../../assets/home/h5.jpg";
 import h6 from "../../assets/home/h6.jpg";
 import ba from "../../assets/home/ba.jpg";
 import ii from "../../assets/home/ii.png";
+import pt from "@/src/assets/icons/pt.png";
+import yt from "@/src/assets/icons/yt.png";
+import fb from "@/src/assets/icons/fb.png";
+import ld from "@/src/assets/icons/ld.png";
+
+
+
+import pwa from "@/src/assets/home/pwa.webp";
+import pwb from "@/src/assets/home/pwb.jpg";
+
+
+
+
+
+
 
 
 import {
+  CalendarHeart,
   Camera,
+  Sparkles,
+  BookOpen,
   Video,
   Plane,
   Pencil,
@@ -718,143 +736,1073 @@ export default function Homes() {
         </section>
 
 
+        {/* ================= IMAGE SLIDER ================= */}
 
+        <section className="w-full bg-[#f7f5ef] px-3 py-5 sm:px-5 sm:py-6 lg:px-8">
 
+          <div className="relative mx-auto max-w-7xl">
 
+            {/* Slider */}
+            <div className="relative h-[280px] overflow-hidden rounded-2xl shadow-lg sm:h-[360px] lg:h-[430px]">
 
-
-
-
-
-
-
-
-
-
-
-
-        <section className="p-5">
-          <div className="flex gap-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden bg-amber-200 p-5 rounded-md">
-
-            <div className="bg-red-400 w-40 h-[100px] min-w-[100px] rounded-md">
-
-              <Image src={p1} alt="Image 1" className="w-full h-full object-cover rounded-md" />
-            </div>
-            <div className="bg-blue-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-green-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-yellow-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-purple-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-pink-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-orange-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-cyan-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-indigo-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-lime-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-purple-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-pink-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-orange-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-cyan-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-indigo-400 h-[100px] min-w-[100px] rounded-md"></div>
-            <div className="bg-lime-400 h-[100px] min-w-[100px] rounded-md"></div>
-
-
-          </div>
-        </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {/* IMAGE SLIDER — ONLY THIS PART CHANGED */}
-
-        <section className="p-5 bg-amber-100" >
-          <div className="relative h-[300px] overflow-hidden rounded-xl">
-
-            {/* Images */}
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-700 ${current === index ? "opacity-100" : "opacity-0"
-                  }`}
-              >
-                <Image
-                  src={image}
-                  alt={`Slide ${index + 1}`}
-                  fill
-                  className="object-cover"
-                  priority={index === 0}
-                />
-              </div>
-            ))}
-
-            {/* Left Arrow */}
-            <button
-              onClick={() =>
-                setCurrent(
-                  (prev) => (prev - 1 + images.length) % images.length
-                )
-              }
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10
-                 bg-black/50 hover:bg-black/80
-                 text-white text-3xl
-                 w-12 h-12 rounded-full
-                 flex items-center justify-center"
-            >
-              ‹
-            </button>
-
-            {/* Right Arrow */}
-            <button
-              onClick={() =>
-                setCurrent((prev) => (prev + 1) % images.length)
-              }
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10
-                 bg-black/50 hover:bg-black/80
-                 text-white text-3xl
-                 w-12 h-12 rounded-full
-                 flex items-center justify-center"
-            >
-              ›
-            </button>
-
-            {/* Dots */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-              {images.map((_, index) => (
-                <button
+              {/* Images */}
+              {images.map((image, index) => (
+                <div
                   key={index}
-                  onClick={() => setCurrent(index)}
-                  className={`w-3 h-3 rounded-full ${current === index
-                    ? "bg-white"
-                    : "bg-white/50"
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${current === index
+                    ? "opacity-100"
+                    : "opacity-0"
                     }`}
-                />
+                >
+
+                  <Image
+                    src={image}
+                    alt={`Photography slide ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                  />
+
+                  {/* Dark Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+
+                </div>
               ))}
+
+
+              {/* ================= LEFT ARROW ================= */}
+
+              <button
+                onClick={() =>
+                  setCurrent(
+                    (prev) =>
+                      (prev - 1 + images.length) % images.length
+                  )
+                }
+                aria-label="Previous image"
+                className="
+          absolute left-3 top-1/2 z-10
+          flex h-9 w-9
+          -translate-y-1/2
+          items-center justify-center
+          rounded-full
+          bg-black/30
+          text-2xl text-white
+          backdrop-blur-sm
+          transition-all duration-300
+          hover:bg-black/60
+          hover:scale-105
+          sm:left-5
+          sm:h-11 sm:w-11
+          sm:text-3xl
+        "
+              >
+                ‹
+              </button>
+
+
+              {/* ================= RIGHT ARROW ================= */}
+
+              <button
+                onClick={() =>
+                  setCurrent(
+                    (prev) =>
+                      (prev + 1) % images.length
+                  )
+                }
+                aria-label="Next image"
+                className="
+          absolute right-3 top-1/2 z-10
+          flex h-9 w-9
+          -translate-y-1/2
+          items-center justify-center
+          rounded-full
+          bg-black/30
+          text-2xl text-white
+          backdrop-blur-sm
+          transition-all duration-300
+          hover:bg-black/60
+          hover:scale-105
+          sm:right-5
+          sm:h-11 sm:w-11
+          sm:text-3xl
+        "
+              >
+                ›
+              </button>
+
+
+              {/* ================= DOTS ================= */}
+
+              <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1.5">
+
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrent(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                    className={`
+              h-1.5
+              rounded-full
+              transition-all
+              duration-300
+              ${current === index
+                        ? "w-6 bg-white"
+                        : "w-1.5 bg-white/50 hover:bg-white/80"
+                      }
+            `}
+                  />
+                ))}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <section className="w-full bg-[#f7f5ef] px-4 py-6 sm:px-6 sm:py-7 lg:px-12">
+
+          <div className="mx-auto grid max-w-6xl grid-cols-2 sm:grid-cols-4">
+
+            {/* ================= 10+ YEARS ================= */}
+            <div className="flex flex-col items-center justify-center px-3 py-3 text-center sm:border-r sm:border-[#d4a72c]/25">
+
+              <div className="mb-2 flex h-9 w-9 items-center justify-center rounded-full bg-[#C8A96A]/10">
+                <CalendarHeart className="h-4.5 w-4.5 text-[#C8A96A]" />
+              </div>
+
+              <p className="font-serif text-2xl font-bold leading-none text-[#0083c4] sm:text-3xl">
+                10+
+              </p>
+
+              <p className="mt-1.5 text-[9px] font-semibold uppercase tracking-[1.5px] text-[#333130] sm:text-[10px]">
+                Years Experience
+              </p>
+
+              <p className="mt-0.5 text-[8px] leading-4 text-gray-500 sm:text-[9px]">
+                Capturing stories with passion
+              </p>
+
+            </div>
+
+
+            {/* ================= 500+ WEDDINGS ================= */}
+            <div className="flex flex-col items-center justify-center px-3 py-3 text-center sm:border-r sm:border-[#d4a72c]/25">
+
+              <div className="mb-2 flex h-9 w-9 items-center justify-center rounded-full bg-[#C8A96A]/10">
+                <Camera className="h-4.5 w-4.5 text-[#C8A96A]" />
+              </div>
+
+              <p className="font-serif text-2xl font-bold leading-none text-[#0083c4] sm:text-3xl">
+                500+
+              </p>
+
+              <p className="mt-1.5 text-[9px] font-semibold uppercase tracking-[1.5px] text-[#333130] sm:text-[10px]">
+                Weddings Captured
+              </p>
+
+              <p className="mt-0.5 text-[8px] leading-4 text-gray-500 sm:text-[9px]">
+                Beautiful moments preserved
+              </p>
+
+            </div>
+
+
+            {/* ================= PREMIUM EDITING ================= */}
+            <div className="flex flex-col items-center justify-center px-3 py-3 text-center sm:border-r sm:border-[#d4a72c]/25">
+
+              <div className="mb-2 flex h-9 w-9 items-center justify-center rounded-full bg-[#C8A96A]/10">
+                <Sparkles className="h-4.5 w-4.5 text-[#C8A96A]" />
+              </div>
+
+              <p className="font-serif text-2xl font-bold leading-none text-[#0083c4] sm:text-3xl">
+                HD
+              </p>
+
+              <p className="mt-1.5 text-[9px] font-semibold uppercase tracking-[1.5px] text-[#333130] sm:text-[10px]">
+                Premium Editing
+              </p>
+
+              <p className="mt-0.5 text-[8px] leading-4 text-gray-500 sm:text-[9px]">
+                High-end cinematic quality
+              </p>
+
+            </div>
+
+
+            {/* ================= PREMIUM ALBUMS ================= */}
+            <div className="flex flex-col items-center justify-center px-3 py-3 text-center">
+
+              <div className="mb-2 flex h-9 w-9 items-center justify-center rounded-full bg-[#C8A96A]/10">
+                <BookOpen className="h-4.5 w-4.5 text-[#C8A96A]" />
+              </div>
+
+              <p className="font-serif text-2xl font-bold leading-none text-[#0083c4] sm:text-3xl">
+                4K
+              </p>
+
+              <p className="mt-1.5 text-[9px] font-semibold uppercase tracking-[1.5px] text-[#333130] sm:text-[10px]">
+                Premium Albums
+              </p>
+
+              <p className="mt-0.5 text-[8px] leading-4 text-gray-500 sm:text-[9px]">
+                Crafted with premium quality
+              </p>
+
+            </div>
+
+          </div>
+
+
+          {/* ================= DESTINATION ================= */}
+          <div className="mx-auto mt-4 max-w-6xl border-t border-[#d4a72c]/20 pt-3 text-center">
+
+            <div className="flex items-center justify-center gap-1.5">
+
+              <MapPin className="h-3.5 w-3.5 shrink-0 text-[#C8A96A]" />
+
+              <p className="text-[8px] font-semibold uppercase tracking-[1.5px] text-[#C8A96A] sm:text-[10px]">
+                Covering India & Destination Weddings
+              </p>
+
+            </div>
+
+            <p className="mt-0.5 text-[8px] text-gray-500 sm:text-[9px]">
+              From intimate celebrations to unforgettable destination stories.
+            </p>
+
+          </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* ================= Let's================= */}
+
+
+
+
+
+        <section className="w-full px-2 py-5 sm:px-4 lg:px-6">
+          <div
+            className="
+      relative mx-auto
+      h-[190px] w-full max-w-7xl
+      overflow-hidden
+      border-y border-[#C8A96A]/30
+      sm:h-[220px]
+      rounded-2xl
+    "
+          >
+
+            {/* ================= LEFT IMAGE ================= */}
+            <div className="absolute inset-y-0 left-0 w-[50%]">
+              <Image
+                src={pwa}
+                alt="Wedding photography"
+                fill
+                sizes="50vw"
+                className="object-cover"
+              />
+
+              {/* Left side → SAME PURE BLACK */}
+              <div
+                className="
+          absolute inset-0
+          bg-gradient-to-r
+          from-black/10
+          via-black/40
+          to-black
+        "
+              />
+            </div>
+
+
+            {/* ================= RIGHT IMAGE ================= */}
+            <div className="absolute inset-y-0 right-0 w-[50%]">
+              <Image
+                src={pwb}
+                alt="Wedding photography"
+                fill
+                sizes="50vw"
+                className="object-cover"
+              />
+
+              {/* Right side → SAME PURE BLACK */}
+              <div
+                className="
+          absolute inset-0
+          bg-gradient-to-l
+          from-black/10
+          via-black/40
+          to-black
+        "
+              />
+            </div>
+
+
+            {/* =================================================
+        CENTER BLACK BLEND
+        No separate strip — only smooth fade
+    ================================================== */}
+            <div
+              className="
+        pointer-events-none
+        absolute inset-y-0 left-1/2
+        z-[2]
+        w-[24%]
+        -translate-x-1/2
+        bg-gradient-to-r
+        from-transparent
+        via-black
+        to-transparent
+      "
+            />
+
+
+            {/* ================= OVERALL DARKNESS ================= */}
+            <div
+              className="
+        pointer-events-none
+        absolute inset-0
+        z-[3]
+        bg-black/15
+      "
+            />
+
+
+            {/* ================= CENTER CONTENT ================= */}
+            <div
+              className="
+        relative z-10
+        flex h-full
+        flex-col
+        items-center
+        justify-center
+        px-4
+        text-center
+      "
+            >
+
+              {/* Small Heading */}
+              <p
+                className="
+          text-[8px]
+          font-semibold
+          uppercase
+          tracking-[2.5px]
+          text-[#C8A96A]
+          sm:text-[10px]
+          sm:tracking-[3px]
+        "
+              >
+                Your Moments Deserve To Be Timeless
+              </p>
+
+
+              {/* Main Heading */}
+              <h2
+                className="
+          mt-1
+          font-serif
+          text-2xl
+          font-semibold
+          leading-tight
+          text-white
+          sm:text-3xl
+          lg:text-4xl
+        "
+              >
+                Let's Capture Your Story
+              </h2>
+
+
+              {/* Description */}
+              <p
+                className="
+          mt-1.5
+          text-[9px]
+          text-white/75
+          sm:text-[11px]
+        "
+              >
+                Now booking for 2025 & 2026 weddings.
+              </p>
+
+
+              {/* ================= BUTTONS ================= */}
+              <div className="mt-4 flex items-center gap-2 sm:gap-3">
+
+                {/* Check Availability */}
+                <button
+                  className="
+            flex items-center justify-center
+            rounded-sm
+            border border-[#C8A96A]
+            bg-[#C8A96A]
+            px-4 py-2
+            text-[8px]
+            font-bold
+            uppercase
+            tracking-[1px]
+            text-white
+            transition-all duration-300
+            hover:bg-[#b49354]
+            sm:px-6 sm:py-2.5
+            sm:text-[10px]
+          "
+                >
+                  Check Availability
+                </button>
+
+
+                {/* WhatsApp */}
+                {/* WhatsApp */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    window.open(
+                      "https://wa.me/918604885021?text=Hello%20Innovative%20Photography%2C%20I%20would%20like%20to%20know%20more%20about%20your%20wedding%20photography%20services.",
+                      "_blank",
+                      "noopener,noreferrer"
+                    );
+                  }}
+                  className="
+    flex items-center justify-center gap-1.5
+    rounded-sm
+    border border-white/50
+    bg-black/30
+    px-4 py-2
+    text-[8px]
+    font-bold
+    uppercase
+    tracking-[1px]
+    text-white
+    backdrop-blur-sm
+    transition-all duration-300
+    hover:border-[#C8A96A]
+    hover:text-[#C8A96A]
+    sm:px-6 sm:py-2.5
+    sm:text-[10px]
+  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-3.5 w-3.5 sm:h-4 sm:w-4"
+                  >
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.075-.792.372-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+
+                    <path d="M12.004 2a9.94 9.94 0 0 0-8.514 15.18L2 22l4.973-1.461A9.94 9.94 0 1 0 12.004 2zm0 18.1a8.14 8.14 0 0 1-4.15-1.135l-.298-.177-2.95.867.787-2.876-.194-.307A8.1 8.1 0 1 1 12.004 20.1z" />
+                  </svg>
+
+                  WhatsApp Us
+                </button>
+
+
+              </div>
             </div>
 
           </div>
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* ================= Follow ================= */}
+
+
+        <section className="w-full overflow-hidden bg-[#f7f5ef] py-3">
+
+          <motion.div
+            className="flex w-max items-center gap-2"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              duration: 35,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+
+            {/* =====================================================
+        FIRST SET
+    ===================================================== */}
+
+            {/* INTRO */}
+            <div className="flex w-40 shrink-0 flex-col justify-center px-2">
+              <p className="text-[10px] font-bold tracking-[2px] text-[#C8A96A] sm:text-[11px]">
+                FOLLOW OUR JOURNEY
+              </p>
+
+              <p className="mt-1 font-serif text-base font-bold text-[#333130] sm:text-lg">
+                Social Media
+              </p>
+
+              <p className="mt-1 text-[9px] text-gray-500 sm:text-[10px]">
+                @innovative.photography
+              </p>
+            </div>
+
+
+            {/* IMAGE 1 */}
+            <div className="group h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h1}
+                alt="Wedding photography"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+
+
+            {/* IMAGE 2 */}
+            <div className="group h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p1}
+                alt="Photography"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+
+
+            {/* INSTAGRAM */}
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-25 w-24 shrink-0 flex-col items-center justify-center px-2 transition duration-300 hover:scale-105"
+            >
+              <Image
+                src={ii}
+                alt="Instagram"
+                className="h-7 w-7 object-contain"
+              />
+
+              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
+                FOLLOW
+              </p>
+
+              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
+                INSTAGRAM
+              </p>
+            </a>
+
+
+            {/* IMAGE 3 */}
+            <div className="group h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h5}
+                alt="Wedding photography"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+
+
+            {/* IMAGE 4 */}
+            <div className="group h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p5}
+                alt="Photography"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+
+
+            {/* YOUTUBE */}
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-25 w-24 shrink-0 flex-col items-center justify-center px-2 transition duration-300 hover:scale-105"
+            >
+              <Image
+                src={yt}
+                alt="YouTube"
+                className="h-7 w-7 object-contain"
+              />
+
+              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
+                FOLLOW
+              </p>
+
+              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
+                YOUTUBE
+              </p>
+            </a>
+
+
+            {/* IMAGE 5 */}
+            <div className="group h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h6}
+                alt="Wedding photography"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+
+
+            {/* IMAGE 6 */}
+            <div className="group h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p1}
+                alt="Photography"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+
+
+            {/* FACEBOOK */}
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-25 w-24 shrink-0 flex-col items-center justify-center px-2 transition duration-300 hover:scale-105"
+            >
+              <Image
+                src={fb}
+                alt="Facebook"
+                className="h-7 w-7 object-contain"
+              />
+
+              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
+                FOLLOW
+              </p>
+
+              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
+                FACEBOOK
+              </p>
+            </a>
+
+
+            {/* IMAGE 7 */}
+            <div className="group h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h5}
+                alt="Wedding photography"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+
+
+            {/* IMAGE 8 */}
+            <div className="group h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p5}
+                alt="Photography"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+
+
+            {/* PINTEREST */}
+            <a
+              href="https://www.pinterest.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-25 w-24 shrink-0 flex-col items-center justify-center px-2 transition duration-300 hover:scale-105"
+            >
+              <Image
+                src={pt}
+                alt="Pinterest"
+                className="h-7 w-7 object-contain"
+              />
+
+              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
+                FOLLOW
+              </p>
+
+              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
+                PINTEREST
+              </p>
+            </a>
+
+
+            {/* IMAGE 9 */}
+            <div className="group h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h6}
+                alt="Wedding photography"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+
+
+            {/* IMAGE 10 */}
+            <div className="group h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h1}
+                alt="Wedding photography"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+
+
+            {/* LINKEDIN */}
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-25 w-24 shrink-0 flex-col items-center justify-center px-2 transition duration-300 hover:scale-105"
+            >
+              <Image
+                src={ld}
+                alt="LinkedIn"
+                className="h-7 w-7 object-contain"
+              />
+
+              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
+                FOLLOW
+              </p>
+
+              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
+                LINKEDIN
+              </p>
+            </a>
+
+
+            {/* IMAGE 11 */}
+            <div className="group h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p1}
+                alt="Photography"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+
+
+            {/* IMAGE 12 */}
+            <div className="group h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h5}
+                alt="Wedding photography"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+
+
+            {/* =====================================================
+        SECOND SET
+        EXACT SAME ORDER FOR SEAMLESS LOOP
+    ===================================================== */}
+
+            {/* INTRO */}
+            {/* INTRO */}
+            <div className="flex w-40 shrink-0 flex-col items-center justify-center px-2 text-center">
+
+              <p className="text-[10px] font-bold tracking-[2px] text-[#C8A96A] sm:text-[11px]">
+                FOLLOW OUR JOURNEY
+              </p>
+
+              <p className="mt-1 font-serif text-base font-bold text-[#333130] sm:text-lg">
+                Social Media
+              </p>
+
+              <p className="mt-1 text-[9px] text-gray-500 sm:text-[10px]">
+                @innovative.photography
+              </p>
+
+            </div>
+
+
+            {/* IMAGE 1 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h1}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+
+            {/* IMAGE 2 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p1}
+                alt="Photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+
+            {/* INSTAGRAM */}
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-25 w-24 shrink-0 flex-col items-center justify-center px-2"
+            >
+              <Image
+                src={ii}
+                alt="Instagram"
+                className="h-7 w-7 object-contain"
+              />
+
+              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
+                FOLLOW
+              </p>
+
+              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
+                INSTAGRAM
+              </p>
+            </a>
+
+
+            {/* IMAGE 3 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h5}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+
+            {/* IMAGE 4 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p5}
+                alt="Photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+
+            {/* YOUTUBE */}
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-25 w-24 shrink-0 flex-col items-center justify-center px-2"
+            >
+              <Image
+                src={yt}
+                alt="YouTube"
+                className="h-7 w-7 object-contain"
+              />
+
+              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
+                FOLLOW
+              </p>
+
+              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
+                YOUTUBE
+              </p>
+            </a>
+
+
+            {/* IMAGE 5 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h6}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+
+            {/* IMAGE 6 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p1}
+                alt="Photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+
+            {/* FACEBOOK */}
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-25 w-24 shrink-0 flex-col items-center justify-center px-2"
+            >
+              <Image
+                src={fb}
+                alt="Facebook"
+                className="h-7 w-7 object-contain"
+              />
+
+              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
+                FOLLOW
+              </p>
+
+              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
+                FACEBOOK
+              </p>
+            </a>
+
+
+            {/* IMAGE 7 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h5}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+
+            {/* IMAGE 8 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p5}
+                alt="Photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+
+            {/* PINTEREST */}
+            <a
+              href="https://www.pinterest.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-25 w-24 shrink-0 flex-col items-center justify-center px-2"
+            >
+              <Image
+                src={pt}
+                alt="Pinterest"
+                className="h-7 w-7 object-contain"
+              />
+
+              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
+                FOLLOW
+              </p>
+
+              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
+                PINTEREST
+              </p>
+            </a>
+
+
+            {/* IMAGE 9 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h6}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+
+            {/* IMAGE 10 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h1}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+
+            {/* LINKEDIN */}
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-25 w-24 shrink-0 flex-col items-center justify-center px-2"
+            >
+              <Image
+                src={ld}
+                alt="LinkedIn"
+                className="h-7 w-7 object-contain"
+              />
+
+              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
+                FOLLOW
+              </p>
+
+              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
+                LINKEDIN
+              </p>
+            </a>
+
+
+            {/* IMAGE 11 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={p1}
+                alt="Photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+
+            {/* IMAGE 12 */}
+            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
+              <Image
+                src={h5}
+                alt="Wedding photography"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+          </motion.div>
+
+        </section>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -909,184 +1857,6 @@ export default function Homes() {
 
 
 
-
-        <section className="w-full overflow-hidden bg-[#f7f5ef] py-3">
-
-          <motion.div
-            className="flex w-max items-center gap-2"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          >
-
-            {/* FIRST SET */}
-
-            {/* Instagram Text */}
-            <div className="flex w-40 shrink-0 flex-col justify-center px-2">
-              <p className="text-[10px] font-bold tracking-[2px] text-[#C8A96A] sm:text-[11px]">
-                FOLLOW OUR JOURNEY
-              </p>
-
-              <p className="mt-1 font-serif text-base font-bold text-[#333130] sm:text-lg">
-                Instagram
-              </p>
-
-              <p className="mt-1 text-[9px] text-gray-500 sm:text-[10px]">
-                @innovative.photography
-              </p>
-            </div>
-
-            {/* Image 1 */}
-            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
-              <Image
-                src={h1}
-                alt="Wedding photography"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            {/* Image 2 */}
-            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
-              <Image
-                src={p1}
-                alt="Photography"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            {/* Image 3 */}
-            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
-              <Image
-                src={h5}
-                alt="Wedding photography"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            {/* Image 4 */}
-            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
-              <Image
-                src={p5}
-                alt="Photography"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            {/* Image 5 */}
-            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
-              <Image
-                src={h6}
-                alt="Wedding photography"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            {/* Instagram */}
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex w-24 shrink-0 flex-col items-center justify-center px-2"
-            >
-              <Image
-                src={ii}
-                alt="Instagram"
-                className="h-6 w-6 object-contain"
-              />
-
-              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
-                FOLLOW
-              </p>
-
-              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
-                INSTAGRAM
-              </p>
-            </a>
-
-
-            {/* SECOND SET — seamless loop */}
-
-            <div className="flex w-40 shrink-0 flex-col justify-center px-2">
-              <p className="text-[10px] font-bold tracking-[2px] text-[#C8A96A] sm:text-[11px]">
-                FOLLOW OUR JOURNEY
-              </p>
-
-              <p className="mt-1 font-serif text-base font-bold text-[#333130] sm:text-lg">
-                Instagram
-              </p>
-
-              <p className="mt-1 text-[9px] text-gray-500 sm:text-[10px]">
-                @innovative.photography
-              </p>
-            </div>
-
-            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
-              <Image
-                src={h1}
-                alt="Wedding photography"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
-              <Image
-                src={p1}
-                alt="Photography"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
-              <Image
-                src={h5}
-                alt="Wedding photography"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
-              <Image
-                src={p5}
-                alt="Photography"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            <div className="h-25 w-40 shrink-0 overflow-hidden rounded-md">
-              <Image
-                src={h6}
-                alt="Wedding photography"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex w-24 shrink-0 flex-col items-center justify-center px-2"
-            >
-              <Image
-                src={ii}
-                alt="Instagram"
-                className="h-6 w-6 object-contain"
-              />
-
-              <p className="mt-1 text-center text-[9px] font-bold tracking-[1px] text-[#333130]">
-                FOLLOW
-              </p>
-
-              <p className="text-center text-[9px] font-bold tracking-[1px] text-[#C8A96A]">
-                INSTAGRAM
-              </p>
-            </a>
-
-          </motion.div>
-
-        </section>
 
 
 

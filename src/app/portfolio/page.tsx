@@ -114,7 +114,7 @@ export default function Services() {
         <Header />
       </header>
 
-      <main className="min-h-screen w-full overflow-hidden bg-black text-white pt-16.5 sm:pt-18.5 ">
+      <main className="min-h-screen w-full overflow-hidden bg-black text-white pt-20.5 sm:pt-18.5 ">
 
         {/* =====================================================
             HERO
