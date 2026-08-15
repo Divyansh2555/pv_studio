@@ -3,7 +3,7 @@
 import Header from "@/src/components/header";
 import Footer from "@/src/components/footer";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 import pgman from "@/src/assets/about/pgman.png";
 import gpg from "@/src/assets/about/gpg.png";
@@ -45,7 +45,11 @@ const team = [
   },
 ];
 
-const containerVariants = {
+/* =====================================================
+   CONTAINER ANIMATION
+===================================================== */
+
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -54,7 +58,11 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+/* =====================================================
+   ITEM ANIMATION
+===================================================== */
+
+const itemVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 40,
@@ -79,25 +87,39 @@ export default function About() {
         {/* =====================================================
             ABOUT SECTION
         ===================================================== */}
+
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8 }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 0.8,
+          }}
           className="px-4 py-8 sm:px-6 sm:py-10 lg:px-12"
         >
           <div className="mx-auto max-w-7xl">
 
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-16">
 
-              {/* LEFT CONTENT */}
+              {/* =====================================================
+                  LEFT CONTENT
+              ===================================================== */}
+
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{
+                  once: true,
+                  amount: 0.3,
+                }}
                 className="max-w-xl"
               >
+
+                {/* Small Heading */}
 
                 <motion.p
                   variants={itemVariants}
@@ -105,6 +127,8 @@ export default function About() {
                 >
                   About Us
                 </motion.p>
+
+                {/* Main Heading */}
 
                 <motion.h2
                   variants={itemVariants}
@@ -117,6 +141,8 @@ export default function About() {
                   We Create Memories.
                 </motion.h2>
 
+                {/* Description */}
+
                 <motion.p
                   variants={itemVariants}
                   className="mt-4 text-sm leading-6 text-gray-500"
@@ -125,6 +151,8 @@ export default function About() {
                   dedicated to turning your special moments into timeless
                   memories.
                 </motion.p>
+
+                {/* Button */}
 
                 <motion.button
                   variants={itemVariants}
@@ -142,8 +170,10 @@ export default function About() {
 
               </motion.div>
 
+              {/* =====================================================
+                  RIGHT IMAGE
+              ===================================================== */}
 
-              {/* RIGHT IMAGE */}
               <motion.div
                 initial={{
                   opacity: 0,
@@ -167,6 +197,7 @@ export default function About() {
               >
 
                 {/* Decorative Border */}
+
                 <motion.div
                   initial={{
                     opacity: 0,
@@ -176,7 +207,9 @@ export default function About() {
                     opacity: 1,
                     scale: 1,
                   }}
-                  viewport={{ once: true }}
+                  viewport={{
+                    once: true,
+                  }}
                   transition={{
                     duration: 1.2,
                     delay: 0.2,
@@ -184,8 +217,11 @@ export default function About() {
                   className="absolute -right-3 -top-3 h-full w-full rounded-3xl border border-[#d4a72c]/50"
                 />
 
-                {/* Image */}
+                {/* Image Container */}
+
                 <div className="group relative h-72 overflow-hidden rounded-3xl shadow-xl sm:h-80">
+
+                  {/* Image */}
 
                   <motion.div
                     whileHover={{
@@ -207,9 +243,11 @@ export default function About() {
                   </motion.div>
 
                   {/* Overlay */}
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
                   {/* Image Text */}
+
                   <motion.div
                     initial={{
                       opacity: 0,
@@ -219,7 +257,9 @@ export default function About() {
                       opacity: 1,
                       y: 0,
                     }}
-                    viewport={{ once: true }}
+                    viewport={{
+                      once: true,
+                    }}
                     transition={{
                       duration: 0.7,
                       delay: 0.5,
@@ -236,22 +276,24 @@ export default function About() {
                   </motion.div>
 
                 </div>
-
               </motion.div>
 
             </div>
           </div>
         </motion.section>
 
-
         {/* =====================================================
             TEAM SECTION
         ===================================================== */}
+
         <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
 
           <div className="w-full">
 
-            {/* Heading */}
+            {/* =====================================================
+                TEAM HEADING
+            ===================================================== */}
+
             <motion.div
               initial={{
                 opacity: 0,
@@ -286,8 +328,10 @@ export default function About() {
 
             </motion.div>
 
+            {/* =====================================================
+                TEAM CARDS
+            ===================================================== */}
 
-            {/* Team Cards */}
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -312,7 +356,10 @@ export default function About() {
                   className="group relative h-64 overflow-hidden rounded-2xl bg-gray-100 shadow-sm sm:h-72"
                 >
 
-                  {/* Image */}
+                  {/* =====================================================
+                      TEAM IMAGE
+                  ===================================================== */}
+
                   <motion.div
                     className="relative h-full w-full"
                     whileHover={{
@@ -331,15 +378,27 @@ export default function About() {
                   </motion.div>
 
                   {/* Gradient */}
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
-                  {/* Content */}
+                  {/* =====================================================
+                      TEAM CONTENT
+                  ===================================================== */}
+
                   <div className="absolute bottom-0 left-0 right-0 p-4">
 
                     <motion.h3
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
+                      initial={{
+                        opacity: 0,
+                        y: 10,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      viewport={{
+                        once: true,
+                      }}
                       transition={{
                         duration: 0.4,
                         delay: index * 0.05,
