@@ -35,6 +35,16 @@ import pwb from "@/src/assets/home/pwb.jpg";
 
 
 
+import pcp from "@/src/assets/home/pcp.jpg";
+import ppa from "@/src/assets/home/ppa.png";
+
+
+
+
+
+
+
+
 
 
 
@@ -1013,9 +1023,775 @@ export default function Homes() {
 
 
 
+
+
+
+
+
+        {/* ================= people shre ================= */}
+
+
+        <section className="relative overflow-hidden bg-white px-4 py-5 sm:px-6 sm:py-20 lg:py-28">
+
+          {/* ================================================= */}
+          {/* BACKGROUND GLOW */}
+          {/* ================================================= */}
+
+          <div
+            className="
+      pointer-events-none
+      absolute
+      -left-32
+      top-20
+      h-72
+      w-72
+      rounded-full
+      bg-[#F6D7C3]/30
+      blur-3xl
+    "
+          />
+
+          <div
+            className="
+      pointer-events-none
+      absolute
+      -right-32
+      bottom-10
+      h-72
+      w-72
+      rounded-full
+      bg-[#DFF3FF]/40
+      blur-3xl
+    "
+          />
+
+          <div className="relative mx-auto max-w-7xl">
+
+            {/* ================================================= */}
+            {/* HEADER */}
+            {/* ================================================= */}
+
+            <div className="mb-10 text-center sm:mb-12">
+
+              <p
+                className="
+          mb-3
+          text-xs
+          font-semibold
+          uppercase
+          tracking-[0.2em]
+          text-[#C8A96A]
+          sm:text-sm
+          sm:tracking-[0.25em]
+        "
+              >
+                My Latest Clients
+              </p>
+
+              <h2
+                className="
+          text-3xl
+          font-bold
+          tracking-tight
+          text-[#172033]
+          sm:text-5xl
+        "
+              >
+                Latest Client Work
+              </h2>
+
+              <p
+                className="
+          mx-auto
+          mt-4
+          max-w-2xl
+          text-sm
+          leading-6
+          text-[#64748B]
+          sm:text-base
+          sm:leading-7
+        "
+              >
+                A collection of beautiful moments captured for our latest clients.
+              </p>
+
+            </div>
+
+
+            {/* ================================================= */}
+            {/* CLIENT POSTS */}
+            {/* ================================================= */}
+
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
+
+
+              {/* ================================================= */}
+              {/* CLIENT 01 — ARJUN & PRIYA */}
+              {/* ================================================= */}
+
+              <article
+                className="
+          group
+          overflow-hidden
+          rounded-2xl
+          bg-white
+          shadow-md
+          ring-1
+          ring-black/5
+          transition-all
+          duration-300
+          hover:-translate-y-2
+          hover:shadow-2xl
+          sm:rounded-3xl
+        "
+              >
+
+                <div className="relative aspect-square overflow-hidden">
+
+                  <img
+                    src={pwa.src}
+                    alt="Arjun and Priya client photography"
+                    className="
+              h-full
+              w-full
+              object-cover
+              transition-transform
+              duration-700
+              group-hover:scale-105
+            "
+                  />
+
+                  <div
+                    className="
+              absolute
+              inset-0
+              bg-gradient-to-t
+              from-black/50
+              via-transparent
+              to-transparent
+              opacity-0
+              transition-opacity
+              duration-300
+              group-hover:opacity-100
+            "
+                  />
+
+                </div>
+
+                <div
+                  className="
+            flex
+            flex-col
+            gap-2
+            px-2.5
+            py-3
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+            sm:px-4
+            sm:py-4
+          "
+                >
+
+                  <div>
+
+                    <p
+                      className="
+                text-xs
+                font-semibold
+                text-[#172033]
+                sm:text-sm
+              "
+                    >
+                      Arjun & Priya
+                    </p>
+
+                    <p
+                      className="
+                mt-0.5
+                text-[10px]
+                text-[#64748B]
+                sm:text-xs
+              "
+                    >
+                      Wedding Session
+                    </p>
+
+                  </div>
+
+                  {/* Instagram + Pinterest */}
+
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="
+                flex h-7 w-7 items-center justify-center
+                rounded-full bg-[#F8F7F4]
+                transition hover:scale-110
+                hover:bg-[#F1E8D5]
+                sm:h-9 sm:w-9
+              "
+                    >
+                      <img
+                        src={ii.src}
+                        alt="Instagram"
+                        className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                      />
+                    </a>
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Pinterest"
+                      className="
+                flex h-7 w-7 items-center justify-center
+                rounded-full bg-[#F8F7F4]
+                transition hover:scale-110
+                hover:bg-[#F1E8D5]
+                sm:h-9 sm:w-9
+              "
+                    >
+                      <img
+                        src={pt.src}
+                        alt="Pinterest"
+                        className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                      />
+                    </a>
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="
+                flex h-7 w-7 items-center justify-center
+                rounded-full bg-[#F8F7F4]
+                transition hover:scale-110
+                hover:bg-[#F1E8D5]
+                sm:h-9 sm:w-9
+              "
+                    >
+                      <img
+                        src={ld.src}
+                        alt="Instagram"
+                        className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                      />
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              {/* ================================================= */}
+              {/* CLIENT 02 — RAHUL & NEHA */}
+              {/* ================================================= */}
+
+              <article
+                className="
+          group
+          overflow-hidden
+          rounded-2xl
+          bg-white
+          shadow-md
+          ring-1
+          ring-black/5
+          transition-all
+          duration-300
+          hover:-translate-y-2
+          hover:shadow-2xl
+          sm:rounded-3xl
+        "
+              >
+
+                <div className="relative aspect-square overflow-hidden">
+
+                  <img
+                    src={pcp.src}
+                    alt="Rahul and Neha client photography"
+                    className="
+              h-full
+              w-full
+              object-cover
+              transition-transform
+              duration-700
+              group-hover:scale-105
+            "
+                  />
+
+                  <div
+                    className="
+              absolute
+              inset-0
+              bg-gradient-to-t
+              from-black/50
+              via-transparent
+              to-transparent
+              opacity-0
+              transition-opacity
+              duration-300
+              group-hover:opacity-100
+            "
+                  />
+
+                </div>
+
+                <div
+                  className="
+            flex
+            flex-col
+            gap-2
+            px-2.5
+            py-3
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+            sm:px-4
+            sm:py-4
+          "
+                >
+
+                  <div>
+
+                    <p
+                      className="
+                text-xs
+                font-semibold
+                text-[#172033]
+                sm:text-sm
+              "
+                    >
+                      Rahul & Neha
+                    </p>
+
+                    <p
+                      className="
+                mt-0.5
+                text-[10px]
+                text-[#64748B]
+                sm:text-xs
+              "
+                    >
+                      Couple Session
+                    </p>
+
+                  </div>
+
+                  {/* YouTube + Facebook */}
+
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="YouTube"
+                      className="
+                flex h-7 w-7 items-center justify-center
+                rounded-full bg-[#F8F7F4]
+                transition hover:scale-110
+                hover:bg-[#F1E8D5]
+                sm:h-9 sm:w-9
+              "
+                    >
+                      <img
+                        src={fb.src}
+                        alt="YouTube"
+                        className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                      />
+                    </a>
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      className="
+                flex h-7 w-7 items-center justify-center
+                rounded-full bg-[#F8F7F4]
+                transition hover:scale-110
+                hover:bg-[#F1E8D5]
+                sm:h-9 sm:w-9
+              "
+                    >
+                      <img
+                        src={ii.src}
+                        alt="Facebook"
+                        className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                      />
+                    </a>
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      className="
+                flex h-7 w-7 items-center justify-center
+                rounded-full bg-[#F8F7F4]
+                transition hover:scale-110
+                hover:bg-[#F1E8D5]
+                sm:h-9 sm:w-9
+              "
+                    >
+                      
+                      <img
+                        src={yt.src}
+                        alt="Facebook"
+                        className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                      />
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              {/* ================================================= */}
+              {/* CLIENT 03 — KABIR SHARMA */}
+              {/* ================================================= */}
+
+              <article
+                className="
+          group
+          overflow-hidden
+          rounded-2xl
+          bg-white
+          shadow-md
+          ring-1
+          ring-black/5
+          transition-all
+          duration-300
+          hover:-translate-y-2
+          hover:shadow-2xl
+          sm:rounded-3xl
+        "
+              >
+
+                <div className="relative aspect-square overflow-hidden">
+
+                  <img
+                    src={ppa.src}
+                    alt="Kabir Sharma client photography"
+                    className="
+              h-full
+              w-full
+              object-cover
+              transition-transform
+              duration-700
+              group-hover:scale-105
+            "
+                  />
+
+                  <div
+                    className="
+              absolute
+              inset-0
+              bg-gradient-to-t
+              from-black/50
+              via-transparent
+              to-transparent
+              opacity-0
+              transition-opacity
+              duration-300
+              group-hover:opacity-100
+            "
+                  />
+
+                </div>
+
+                <div
+                  className="
+            flex
+            flex-col
+            gap-2
+            px-2.5
+            py-3
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+            sm:px-4
+            sm:py-4
+          "
+                >
+
+                  <div>
+
+                    <p
+                      className="
+                text-xs
+                font-semibold
+                text-[#172033]
+                sm:text-sm
+              "
+                    >
+                      Kabir Sharma
+                    </p>
+
+                    <p
+                      className="
+                mt-0.5
+                text-[10px]
+                text-[#64748B]
+                sm:text-xs
+              "
+                    >
+                      Portrait Session
+                    </p>
+
+                  </div>
+
+                  {/* LinkedIn + Instagram */}
+
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="
+                flex h-7 w-7 items-center justify-center
+                rounded-full bg-[#F8F7F4]
+                transition hover:scale-110
+                hover:bg-[#F1E8D5]
+                sm:h-9 sm:w-9
+              "
+                    >
+                      <img
+                        src={ld.src}
+                        alt="LinkedIn"
+                        className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                      />
+                    </a>
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="
+                flex h-7 w-7 items-center justify-center
+                rounded-full bg-[#F8F7F4]
+                transition hover:scale-110
+                hover:bg-[#F1E8D5]
+                sm:h-9 sm:w-9
+              "
+                    >
+                      <img
+                        src={pt.src}
+                        alt="Instagram"
+                        className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                      />
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              {/* ================================================= */}
+              {/* CLIENT 04 — ANANYA MEHRA */}
+              {/* ================================================= */}
+
+              <article
+                className="
+          group
+          overflow-hidden
+          rounded-2xl
+          bg-white
+          shadow-md
+          ring-1
+          ring-black/5
+          transition-all
+          duration-300
+          hover:-translate-y-2
+          hover:shadow-2xl
+          sm:rounded-3xl
+        "
+              >
+
+                <div className="relative aspect-square overflow-hidden">
+
+                  <img
+                    src={pwb.src}
+                    alt="Ananya Mehra client photography"
+                    className="
+              h-full
+              w-full
+              object-cover
+              transition-transform
+              duration-700
+              group-hover:scale-105
+            "
+                  />
+
+                  <div
+                    className="
+              absolute
+              inset-0
+              bg-gradient-to-t
+              from-black/50
+              via-transparent
+              to-transparent
+              opacity-0
+              transition-opacity
+              duration-300
+              group-hover:opacity-100
+            "
+                  />
+
+                </div>
+
+                <div
+                  className="
+            flex
+            flex-col
+            gap-2
+            px-2.5
+            py-3
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+            sm:px-4
+            sm:py-4
+          "
+                >
+
+                  <div>
+
+                    <p
+                      className="
+                text-xs
+                font-semibold
+                text-[#172033]
+                sm:text-sm
+              "
+                    >
+                      Ananya Mehra
+                    </p>
+
+                    <p
+                      className="
+                mt-0.5
+                text-[10px]
+                text-[#64748B]
+                sm:text-xs
+              "
+                    >
+                      Event Photography
+                    </p>
+
+                  </div>
+
+                  {/* Facebook + YouTube + LinkedIn */}
+
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      className="
+                flex h-7 w-7 items-center justify-center
+                rounded-full bg-[#F8F7F4]
+                transition hover:scale-110
+                hover:bg-[#F1E8D5]
+                sm:h-9 sm:w-9
+              "
+                    >
+                      <img
+                        src={fb.src}
+                        alt="Facebook"
+                        className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                      />
+                    </a>
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="YouTube"
+                      className="
+                flex h-7 w-7 items-center justify-center
+                rounded-full bg-[#F8F7F4]
+                transition hover:scale-110
+                hover:bg-[#F1E8D5]
+                sm:h-9 sm:w-9
+              "
+                    >
+                      <img
+                        src={yt.src}
+                        alt="YouTube"
+                        className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                      />
+                    </a>
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="
+                flex h-7 w-7 items-center justify-center
+                rounded-full bg-[#F8F7F4]
+                transition hover:scale-110
+                hover:bg-[#F1E8D5]
+                sm:h-9 sm:w-9
+              "
+                    >
+                      <img
+                        src={ld.src}
+                        alt="LinkedIn"
+                        className="h-4 w-4 object-contain sm:h-5 sm:w-5"
+                      />
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         {/* ================= Let's================= */}
 
-        <section className=" bg-[#f7f5ef] w-full px-2 py-5 sm:px-4 lg:px-6">
+        <section className=" bg-[#f7f5ef7e] w-full px-2 py-5 sm:px-4 lg:px-6">
           <div
             className="
       relative mx-auto
@@ -1238,26 +2014,6 @@ export default function Homes() {
 
           </div>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         {/* ================= Follow ================= */}
