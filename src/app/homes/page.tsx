@@ -101,9 +101,6 @@ export default function Homes() {
       <main>
 
         {/* home*/}
-
-
-
         <section className="relative min-h-screen overflow-hidden bg-black">
 
           {/* Transparent Header */}
@@ -338,7 +335,7 @@ export default function Homes() {
 
 
 
-
+        {/*OUR SERVICES */}
         <section className="w-full px-2 py-5">
           <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-row sm:gap-3 sm:overflow-x-auto sm:pb-2">
 
@@ -498,10 +495,12 @@ export default function Homes() {
 
 
 
+        {/*show slider  */}
+
 
         <section
           onClick={() => router.push("/services")}
-          className="w-full bg-white py-2 cursor-pointer"
+          className="w-full bg-[#f6f5f29c] py-2 cursor-pointer"
         >
           <div className="w-full overflow-hidden">
 
@@ -736,6 +735,7 @@ export default function Homes() {
         </section>
 
 
+
         {/* ================= IMAGE SLIDER ================= */}
 
         <section className="w-full bg-[#f7f5ef] px-3 py-5 sm:px-5 sm:py-6 lg:px-8">
@@ -869,6 +869,7 @@ export default function Homes() {
 
 
 
+        {/* */}
 
 
         <section className="w-full bg-[#f7f5ef] px-4 py-6 sm:px-6 sm:py-7 lg:px-12">
@@ -1014,11 +1015,7 @@ export default function Homes() {
 
         {/* ================= Let's================= */}
 
-
-
-
-
-        <section className="w-full px-2 py-5 sm:px-4 lg:px-6">
+        <section className=" bg-[#f7f5ef] w-full px-2 py-5 sm:px-4 lg:px-6">
           <div
             className="
       relative mx-auto

@@ -23,6 +23,11 @@ import p13 from "../../assets/p13.jpg";
 import p14 from "../../assets/p14.jpg";
 import p15 from "../../assets/p15.jpg";
 
+
+
+import pwa from "@/src/assets/home/pwa.webp";
+import pwb from "@/src/assets/home/pwb.jpg";
+
 const images = [
   p1,
   p2,
@@ -711,6 +716,236 @@ export default function Services() {
           </div>
 
         </section>
+    
+
+         {/* =====================================================
+            Let us
+        ===================================================== */}
+
+        <section className=" bg-white w-full px-2 py-5 sm:px-4 lg:px-6">
+          <div
+            className="
+              relative mx-auto
+              h-[190px] w-full max-w-7xl
+              overflow-hidden
+              border-y border-[#C8A96A]/30
+              sm:h-[220px]
+              rounded-2xl
+            "
+          >
+
+            {/* ================= LEFT IMAGE ================= */}
+            <div className="absolute inset-y-0 left-0 w-[50%]">
+              <Image
+                src={pwa}
+                alt="Wedding photography"
+                fill
+                sizes="50vw"
+                className="object-cover"
+              />
+
+              {/* Left side → SAME PURE BLACK */}
+              <div
+                className="
+                  absolute inset-0
+                  bg-gradient-to-r
+                  from-black/10
+                  via-black/40
+                  to-black
+                "
+              />
+            </div>
+
+
+            {/* ================= RIGHT IMAGE ================= */}
+            <div className="absolute inset-y-0 right-0 w-[50%]">
+              <Image
+                src={pwb}
+                alt="Wedding photography"
+                fill
+                sizes="50vw"
+                className="object-cover"
+              />
+
+              {/* Right side → SAME PURE BLACK */}
+              <div
+                className="
+                  absolute inset-0
+                  bg-gradient-to-l
+                  from-black/10
+                  via-black/40
+                  to-black
+                "
+              />
+            </div>
+
+
+            {/* =================================================
+                CENTER BLACK BLEND
+                No separate strip — only smooth fade
+            ================================================== */}
+            <div
+              className="
+                pointer-events-none
+                absolute inset-y-0 left-1/2
+                z-[2]
+                w-[24%]
+                -translate-x-1/2
+                bg-gradient-to-r
+                from-transparent
+                via-black
+                to-transparent
+              "
+            />
+
+
+            {/* ================= OVERALL DARKNESS ================= */}
+            <div
+              className="
+                pointer-events-none
+                absolute inset-0
+                z-[3]
+                bg-black/15
+              "
+            />
+
+
+            {/* ================= CENTER CONTENT ================= */}
+            <div
+              className="
+                relative z-10
+                flex h-full
+                flex-col
+                items-center
+                justify-center
+                px-4
+                text-center
+              "
+            >
+
+              {/* Small Heading */}
+              <p
+                className="
+                  text-[8px]
+                  font-semibold
+                  uppercase
+                  tracking-[2.5px]
+                  text-[#C8A96A]
+                  sm:text-[10px]
+                  sm:tracking-[3px]
+                "
+              >
+                Your Moments Deserve To Be Timeless
+              </p>
+
+
+              {/* Main Heading */}
+              <h2
+                className="
+                  mt-1
+                  font-serif
+                  text-2xl
+                  font-semibold
+                  leading-tight
+                  text-white
+                  sm:text-3xl
+                  lg:text-4xl
+                "
+              >
+                Let's Capture Your Story
+              </h2>
+
+
+              {/* Description */}
+              <p
+                className="
+                  mt-1.5
+                  text-[9px]
+                  text-white/75
+                  sm:text-[11px]
+                "
+              >
+                Now booking for 2025 & 2026 weddings.
+              </p>
+
+
+              {/* ================= BUTTONS ================= */}
+              <div className="mt-4 flex items-center gap-2 sm:gap-3">
+
+                {/* Check Availability */}
+                <button
+                  className="
+                    flex items-center justify-center
+                    rounded-sm
+                    border border-[#C8A96A]
+                    bg-[#C8A96A]
+                    px-4 py-2
+                    text-[8px]
+                    font-bold
+                    uppercase
+                    tracking-[1px]
+                    text-white
+                    transition-all duration-300
+                    hover:bg-[#b49354]
+                    sm:px-6 sm:py-2.5
+                    sm:text-[10px]
+                  "
+                >
+                  Check Availability
+                </button>
+
+
+                {/* WhatsApp */}
+                {/* WhatsApp */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    window.open(
+                      "https://wa.me/918604885021?text=Hello%20Innovative%20Photography%2C%20I%20would%20like%20to%20know%20more%20about%20your%20wedding%20photography%20services.",
+                      "_blank",
+                      "noopener,noreferrer"
+                    );
+                  }}
+                  className="
+            flex items-center justify-center gap-1.5
+            rounded-sm
+            border border-white/50
+            bg-black/30
+            px-4 py-2
+            text-[8px]
+            font-bold
+            uppercase
+            tracking-[1px]
+            text-white
+            backdrop-blur-sm
+            transition-all duration-300
+            hover:border-[#C8A96A]
+            hover:text-[#C8A96A]
+            sm:px-6 sm:py-2.5
+            sm:text-[10px]
+          "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-3.5 w-3.5 sm:h-4 sm:w-4"
+                  >
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.075-.792.372-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+
+                    <path d="M12.004 2a9.94 9.94 0 0 0-8.514 15.18L2 22l4.973-1.461A9.94 9.94 0 1 0 12.004 2zm0 18.1a8.14 8.14 0 0 1-4.15-1.135l-.298-.177-2.95.867.787-2.876-.194-.307A8.1 8.1 0 1 1 12.004 20.1z" />
+                  </svg>
+
+                  WhatsApp Us
+                </button>
+
+
+              </div>
+            </div>
+
+          </div>
+        </section>
+
 
 
       </main>

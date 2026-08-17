@@ -643,49 +643,137 @@ export default function Contact() {
             CTA
         ===================================================== */}
 
-        <section className="relative px-6 py-20 lg:py-28">
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.95,
-            }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.3,
+
+
+<section className="relative px-6 py-10 lg:py-28">
+
+  <motion.div
+    initial={{
+      opacity: 0,
+      y: 30,
+    }}
+    whileInView={{
+      opacity: 1,
+      y: 0,
+    }}
+    viewport={{
+      once: true,
+      amount: 0.3,
+    }}
+    transition={{
+      duration: 0.7,
+    }}
+    className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-950 via-green-950 to-zinc-950 px-6 py-14 text-center text-white shadow-2xl sm:px-12"
+  >
+
+    {/* GREEN GLOW */}
+    <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-green-500/20 blur-3xl" />
+    <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl" />
+
+    <div className="relative z-10">
+
+      {/* STATUS */}
+      <div className="mb-5 flex items-center justify-center gap-2">
+
+        <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-green-400 shadow-lg shadow-green-400/50" />
+
+        <span className="text-sm font-medium uppercase tracking-[0.2em] text-green-300">
+          Available For Bookings
+        </span>
+
+      </div>
+
+      {/* HEADING */}
+      <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
+        Have A Story To Tell?
+      </h2>
+
+      {/* DESCRIPTION */}
+      <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-green-100/70 sm:text-base">
+        From intimate moments to grand celebrations, we&apos;re here
+        to turn your memories into timeless visuals.
+      </p>
+
+      {/* CALL BUTTON */}
+      <div className="mt-8 flex justify-center">
+
+        <a
+          href="tel:+918604885021"
+          aria-label="Call us at +91 86048 85021"
+          className="group inline-flex items-center gap-3 rounded-full bg-green-500 px-7 py-4 font-semibold text-white shadow-xl shadow-green-500/30 transition-all duration-300 hover:-translate-y-1 hover:bg-green-400 hover:shadow-2xl hover:shadow-green-500/40 active:scale-95"
+        >
+
+          {/* PHONE ICON */}
+          <motion.span
+            animate={{
+              x: [0, 7, 0],
             }}
             transition={{
-              duration: 0.7,
+              duration: 1.2,
+              repeat: Infinity,
+              ease: "easeInOut",
             }}
-            className="mx-auto max-w-5xl rounded-3xl bg-[#C8A96A] px-6 py-14 text-center text-white shadow-xl sm:px-12"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-green-600 shadow-md"
           >
 
-            <h2 className="text-3xl font-bold sm:text-5xl">
-              Have A Story To Tell?
-            </h2>
-
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-white/85 sm:text-base">
-              From intimate moments to grand celebrations, we&apos;re here
-              to turn your memories into timeless visuals.
-            </p>
-
-            <a
-              href="mailto:hello@yourstudio.com"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-zinc-900 px-7 py-3 font-semibold text-white transition hover:bg-zinc-800"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              className="h-5 w-5"
             >
-              Let&apos;s Talk
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M22 16.92v3a2 2 0 0 1-2.18 2
+                19.79 19.79 0 0 1-8.63-3.07
+                19.5 19.5 0 0 1-6-6
+                A19.79 19.79 0 0 1 2.12 4.18
+                2 2 0 0 1 4.11 2h3
+                a2 2 0 0 1 2 1.72
+                12.84 12.84 0 0 0 .7 2.81
+                2 2 0 0 1-.45 2.11L8.09 9.91
+                a16 16 0 0 0 6 6l1.27-1.27
+                a2 2 0 0 1 2.11-.45
+                12.84 12.84 0 0 0 2.81.7
+                A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
 
-              <ArrowRight size={18} />
+          </motion.span>
 
-            </a>
+          {/* BUTTON TEXT */}
+          <span className="flex flex-col items-start leading-tight">
 
-          </motion.div>
+            <span className="text-xs font-medium text-white/80">
+              Call Us Now
+            </span>
 
-        </section>
+            <span className="text-base font-bold tracking-wide">
+              +91 86048 85021
+            </span>
+
+          </span>
+
+        </a>
+
+      </div>
+
+      {/* HINT */}
+      <p className="mt-5 text-xs text-green-100/50">
+        Tap to call us directly
+      </p>
+
+    </div>
+
+  </motion.div>
+
+</section>
+
+
 
       </main>
 
